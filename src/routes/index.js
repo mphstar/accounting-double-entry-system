@@ -18,6 +18,13 @@ const GettingStarted = lazy(() => import('../pages/GettingStarted'))
 const DocFeatures = lazy(() => import('../pages/DocFeatures'))
 const DocComponents = lazy(() => import('../pages/DocComponents'))
 
+// double entry
+
+const ChartOfAccount = lazy(() => import('../pages/protected/ChartOfAccount'))
+const JournalAccount = lazy(() => import('../pages/protected/JournalAccount'))
+const BalanceSheet = lazy(() => import('../pages/protected/BalanceSheet'))
+const TrialBalance = lazy(() => import('../pages/protected/TrialBalance'))
+const LedgerSummary = lazy(() => import('../pages/protected/LedgerSummary'))
 
 const routes = [
   {
@@ -80,6 +87,27 @@ const routes = [
     path: '/blank',
     component: Blank,
   },
+  {
+    path: '/double-entry/chart',
+    component: ChartOfAccount,
+  }
+  ,
+  {
+    path: '/double-entry/journal-account',
+    component: JournalAccount,
+  },
+  {
+    path: '/double-entry/balance-sheet',
+    component: BalanceSheet,
+  },
+  {
+    path: '/double-entry/trial-balance',
+    component: TrialBalance,
+  },
+  {
+    path: '/double-entry/ledger-summary',
+    component: LedgerSummary,
+  }
 ]
 
 export default routes
