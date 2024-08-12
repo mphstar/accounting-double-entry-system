@@ -2,7 +2,7 @@ import React from "react";
 
 const CustomTable = ({ column = [], rows = [], title }) => {
   return (
-    <div className="overflow-x-auto bg-base-100 p-6 drop-shadow">
+    <div className="overflow-x-auto bg-base-100 p-6 drop-shadow w-full">
       {title && <h1 className="font-semibold">{title}</h1>}
       <table className="table">
         {/* head */}
