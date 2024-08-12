@@ -1,5 +1,5 @@
 import Header from "./Header"
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import routes from '../routes'
 import { Suspense, lazy } from 'react'
 import SuspenseContent from "./SuspenseContent"
@@ -23,9 +23,9 @@ function PageContent(){
       }, [pageTitle])
 
     return(
-        <div className="drawer-content flex flex-col ">
+        <div className="drawer-content flex flex-col h-full">
             <Header/>
-            <main className="flex-1 overflow-y-auto md:pt-4 pt-4 px-6  bg-base-200" ref={mainContentRef}>
+            <main className="flex-1 md:pt-4 pt-4 px-6  bg-base-200 h-full pb-8" ref={mainContentRef}>
                 <Suspense fallback={<SuspenseContent />}>
                         <Routes>
                             {
@@ -45,7 +45,7 @@ function PageContent(){
                             <Route path="*" element={<Page404 />} />
                         </Routes>
                 </Suspense>
-                <div className="h-16"></div>
+                {/* <div className="h-16"></div> */}
             </main>
         </div> 
     )

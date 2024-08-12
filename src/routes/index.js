@@ -25,6 +25,7 @@ const JournalAccount = lazy(() => import('../pages/protected/JournalAccount'))
 const BalanceSheet = lazy(() => import('../pages/protected/BalanceSheet'))
 const TrialBalance = lazy(() => import('../pages/protected/TrialBalance'))
 const LedgerSummary = lazy(() => import('../pages/protected/LedgerSummary'))
+const User = lazy(() => import('../pages/protected/User'))
 
 const routes = [
   {
@@ -107,6 +108,10 @@ const routes = [
   {
     path: '/double-entry/ledger-summary',
     component: LedgerSummary,
+  },
+  {
+    path: '/user',
+    component: User,
   }
 ]
 
