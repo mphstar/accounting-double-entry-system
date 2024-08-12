@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col">
       <h1 className="font-semibold">Dashboard</h1>
-      <div className="w-full flex flex-col md:flex-row gap-4 mt-4 h-full md:h-[600px]">
+      <div className="w-full flex flex-col md:flex-row gap-4 mt-4 h-full md:h-[550px]">
         <div className="flex w-full flex-col gap-4 md:w-[60%] h-full">
           <SectionDashboard />
           <SectionAccountBalance />

@@ -34,7 +34,7 @@ const DATA = [
 
 const SectionIncomeVsExpense = () => {
   return (
-    <div className="flex flex-col bg-white rounded-md h-full drop-shadow p-4">
+    <div className="flex flex-col bg-base-100 rounded-md h-full drop-shadow p-4">
       <h1 className="font-medium">Income VS Expense</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-7">
         {DATA.map((data, index) => (
