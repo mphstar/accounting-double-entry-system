@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
+import { setPageTitle } from '../../../../features/common/headerSlice'
+import BalanceSheet from '../../../../features/super-admin/double-entry/balance-sheet'
 
-import BalanceSheet from '../../features/double-entry/balance-sheet'
 
 function InternalPage(){
 

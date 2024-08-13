@@ -1,8 +1,8 @@
 import React from "react";
-import HeadPage from "../../../components/HeadPage/HeadPage";
 import { FiFilter } from "react-icons/fi";
 import { TbFileExport } from "react-icons/tb";
 import { MdOutlinePrint } from "react-icons/md";
+import HeadPage from "../../../../components/HeadPage/HeadPage";
 
 const BalanceSheet = () => {
   return (

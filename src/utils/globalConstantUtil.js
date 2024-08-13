@@ -5,6 +5,7 @@ module.exports = Object.freeze({
         LEAD_ADD_NEW : "LEAD_ADD_NEW",
         CONFIRMATION : "CONFIRMATION",
         DEFAULT : "",
+        FORM_STAFF_USER: "FORM_STAFF_USER",
     },
 
     RIGHT_DRAWER_TYPES : {

@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
-
-import ChartOfAccount from '../../features/double-entry/chart-of-account'
+import { setPageTitle } from '../../../../features/common/headerSlice'
+import JournalAccount from '../../../../features/super-admin/double-entry/journal-account'
 
 function InternalPage(){
 
@@ -13,7 +12,7 @@ function InternalPage(){
       }, [])
       
     return(
-        <ChartOfAccount />
+        <JournalAccount />
     )
 }
 

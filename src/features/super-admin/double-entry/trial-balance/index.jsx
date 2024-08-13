@@ -1,11 +1,11 @@
 import React, { lazy } from "react";
-import HeadPage from "../../../components/HeadPage/HeadPage";
+import HeadPage from "../../../../components/HeadPage/HeadPage";
 import { FiFilter } from "react-icons/fi";
 import { TbFileExport } from "react-icons/tb";
 import { MdOutlinePrint } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 import { IoSearchOutline } from "react-icons/io5";
-import FilterCard from "../../../components/Cards/FilterCard";
+import FilterCard from "../../../../components/Cards/FilterCard";
 import { useDispatch, useSelector } from "react-redux";
 import { handleShow } from "./filterSlice";
 

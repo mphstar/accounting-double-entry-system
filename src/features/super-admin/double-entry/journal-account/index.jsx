@@ -1,8 +1,8 @@
 import React from "react";
-import HeadPage from "../../../components/HeadPage/HeadPage";
-import CustomTable from "../../../components/TablePage/CustomTable";
+import HeadPage from "../../../../components/HeadPage/HeadPage";
+import CustomTable from "../../../../components/TablePage/CustomTable";
 import { JOURNALCOLUMN, JOURNALROW } from "./dummyData";
-import Paginate from "../../../components/Paginate/Paginate";
+import Paginate from "../../../../components/Paginate/Paginate";
 
 const JournalAccount = () => {
   return (

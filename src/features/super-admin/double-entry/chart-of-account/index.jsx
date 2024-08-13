@@ -1,9 +1,9 @@
 import React from "react";
-import HeadPage from "../../../components/HeadPage/HeadPage";
-import CustomTable from "../../../components/TablePage/CustomTable";
-import Paginate from "../../../components/Paginate/Paginate";
+import HeadPage from "../../../../components/HeadPage/HeadPage";
+import CustomTable from "../../../../components/TablePage/CustomTable";
+import Paginate from "../../../../components/Paginate/Paginate";
 import { ASSETSCOLUMN, ASSETSROW } from "./dummyData";
-import FilterCard from "../../../components/Cards/FilterCard";
+import FilterCard from "../../../../components/Cards/FilterCard";
 import { IoSearchOutline } from "react-icons/io5";
 import { GrPowerReset } from "react-icons/gr";
 

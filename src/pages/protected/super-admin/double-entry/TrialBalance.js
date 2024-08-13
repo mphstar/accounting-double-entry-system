@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
+import { setPageTitle } from '../../../../features/common/headerSlice'
+import TrialBalance from '../../../../features/super-admin/double-entry/trial-balance'
 
-import TrialBalance from '../../features/double-entry/trial-balance'
 
 function InternalPage(){
 

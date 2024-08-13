@@ -1,10 +1,10 @@
 import React from "react";
-import HeadPage from "../../../components/HeadPage/HeadPage";
-import CustomTable from "../../../components/TablePage/CustomTable";
-import Paginate from "../../../components/Paginate/Paginate";
+import HeadPage from "../../../../components/HeadPage/HeadPage";
+import CustomTable from "../../../../components/TablePage/CustomTable";
+import Paginate from "../../../../components/Paginate/Paginate";
 import { LEDGERCOLUMN, LEDGERROW } from "./dummyData";
 import { IoSearchOutline } from "react-icons/io5";
-import FilterCard from "../../../components/Cards/FilterCard";
+import FilterCard from "../../../../components/Cards/FilterCard";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 

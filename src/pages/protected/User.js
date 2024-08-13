@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../features/common/headerSlice'
-import JournalAccount from '../../features/double-entry/journal-account'
 import Users from '../../features/users'
 
 function InternalPage(){
