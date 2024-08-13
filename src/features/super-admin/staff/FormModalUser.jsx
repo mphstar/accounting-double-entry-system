@@ -65,8 +65,8 @@ const FormModalUser = ({ extraObject, closeModal }) => {
         </label>
       </div>
       <div className="flex items-center justify-end w-full mt-8 gap-2">
-        <button onClick={closeModal} className="btn">Cancel</button>
-        <button onClick={closeModal} className="btn btn-success text-white">Create</button>
+        <button onClick={() => closeModal()} className="btn">Cancel</button>
+        <button onClick={() => closeModal()} className="btn btn-success text-white">Create</button>
       </div>
     </div>
   );

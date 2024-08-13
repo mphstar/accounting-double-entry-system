@@ -44,6 +44,8 @@ const StaffUser = lazy(() =>
   import("../pages/protected/super-admin/staff/StaffUser")
 );
 
+const StaffRole = lazy(() => import("../pages/protected/super-admin/staff/StaffRole"));
+
 const routes = [
   {
     path: "/dashboard", // the url
@@ -109,6 +111,12 @@ const routes = [
     path: "/staff/user",
     component: StaffUser,
   },
+  
+  {
+    path: "/staff/role",
+    component: StaffRole,
+  },
+
   {
     path: "/double-entry/chart",
     component: ChartOfAccount,

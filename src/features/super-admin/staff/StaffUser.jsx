@@ -99,7 +99,7 @@ const Card = ({ avatar, name, email, role }) => {
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-square bg-transparent"
+            className="btn btn-square shadow-none bg-transparent"
           >
             <VscKebabVertical />
           </div>
