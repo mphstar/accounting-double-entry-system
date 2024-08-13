@@ -46,12 +46,12 @@ const StaffRole = () => {
       {
         title: "Permissions",
         value: (
-          <div className="flex gap-2 items-center flex-wrap">
+          <div className="flex gap-2 items-center flex-wrap w-[500px]">
             {permissions.map((data, index) =>
               data.permissions.map((item, index) => (
                 <span
                   key={index}
-                  className="bg-primary px-2 py-1 text-white rounded-full"
+                  className="bg-primary px-2 py-1 text-white text-xs rounded-badge"
                 >
                   {item} {data.module}
                 </span>
