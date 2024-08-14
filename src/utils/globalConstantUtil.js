@@ -5,8 +5,15 @@ module.exports = Object.freeze({
         LEAD_ADD_NEW : "LEAD_ADD_NEW",
         CONFIRMATION : "CONFIRMATION",
         DEFAULT : "",
+
+        // Staff
         FORM_STAFF_USER: "FORM_STAFF_USER",
         FORM_STAFF_ROLE: "FORM_STAFF_ROLE",
+
+        // Product & Services
+        FORM_IMPORT_PRODUCT: "FORM_IMPORT_PRODUCT",
+        FORM_CREATE_PRODUCT: "FORM_CREATE_PRODUCT",
+
     },
 
     RIGHT_DRAWER_TYPES : {

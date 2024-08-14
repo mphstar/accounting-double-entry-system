@@ -6,6 +6,8 @@ import AddLeadModalBody from "../features/leads/components/AddLeadModalBody";
 import ConfirmationModalBody from "../features/common/components/ConfirmationModalBody";
 import FormModalUser from "../features/super-admin/staff/FormModalUser";
 import FormModalRole from "../features/super-admin/staff/FormModalRole";
+import FormImportData from "../features/super-admin/product-services/FormImportData";
+import FormCreateData from "../features/super-admin/product-services/FormCreateData";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -48,12 +50,23 @@ function ModalLayout() {
                   closeModal={close}
                 />
               ),
+
+              // Staff
               [MODAL_BODY_TYPES.FORM_STAFF_USER]: (
                 <FormModalUser extraObject={extraObject} closeModal={close} />
               ),
               [MODAL_BODY_TYPES.FORM_STAFF_ROLE]: (
                 <FormModalRole extraObject={extraObject} closeModal={close} />
               ),
+
+              // Product & Service
+              [MODAL_BODY_TYPES.FORM_IMPORT_PRODUCT]: (
+                <FormImportData extraObject={extraObject} closeModal={close} />
+              ),
+              [MODAL_BODY_TYPES.FORM_CREATE_PRODUCT]: (
+                <FormCreateData extraObject={extraObject} closeModal={close} />
+              ),
+
               [MODAL_BODY_TYPES.DEFAULT]: <div></div>,
             }[bodyType]
           }
