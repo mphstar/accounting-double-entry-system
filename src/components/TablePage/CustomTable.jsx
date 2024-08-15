@@ -21,7 +21,7 @@ const CustomTable = ({ column = [], rows = [], title }) => {
         </div>
         <div className="my-2 w-full md:max-w-[300px]">
           <label className="input input-bordered flex items-center gap-2">
-            <input type="text" className="w-full" placeholder="Search" />
+            <input type="text" className="w-full bg-transparent" placeholder="Search" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"

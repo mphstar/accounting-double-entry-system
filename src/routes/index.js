@@ -58,6 +58,8 @@ const ConstantTaxes = lazy(() =>
   import("../pages/protected/super-admin/constant/taxes/ConstantTaxes")
 );
 
+const ConstantCategory = lazy(() => import("../pages/protected/super-admin/constant/category/ConstantCategory"));
+
 const routes = [
   {
     path: "/dashboard", // the url
@@ -158,6 +160,12 @@ const routes = [
     path: "/constant/taxes",
     component: ConstantTaxes,
   },
+  
+  {
+    path: "/constant/category",
+    component: ConstantCategory,
+  },
+
 
   {
     path: "/user",

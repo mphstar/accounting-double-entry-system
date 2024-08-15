@@ -284,7 +284,7 @@ const routes = [
         name: "Taxes",
       },
       {
-        path: "/app/staff/proposal",
+        path: "/app/constant/category",
         icon: "",
         name: "Category",
       },
@@ -317,7 +317,6 @@ const routes = [
     icon: <IoSettingsOutline className={`${iconClasses} inline`} />,
     name: "System Setting",
   },
-
 ];
 
 export default routes;

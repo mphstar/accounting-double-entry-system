@@ -9,6 +9,7 @@ import FormModalRole from "../features/super-admin/staff/FormModalRole";
 import FormImportData from "../features/super-admin/product-services/FormImportData";
 import FormCreateData from "../features/super-admin/product-services/FormCreateData";
 import ModalConstantTaxes from "../features/super-admin/constant/taxes/ModalConstantTaxes";
+import ModalConstantCategory from "../features/super-admin/constant/category/ModalConstantCategory";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -70,7 +71,17 @@ function ModalLayout() {
 
               // Constant
               [MODAL_BODY_TYPES.FORM_CREATE_CONSTANT_TAXES]: (
-                <ModalConstantTaxes extraObject={extraObject} closeModal={close} />
+                <ModalConstantTaxes
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+              // Constant
+              [MODAL_BODY_TYPES.FORM_CREATE_CONSTANT_CATEGORY]: (
+                <ModalConstantCategory
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
               ),
 
               [MODAL_BODY_TYPES.DEFAULT]: <div></div>,
