@@ -53,6 +53,11 @@ const ProductService = lazy(() =>
   import("../pages/protected/super-admin/product-services/ProductService")
 );
 
+// Constant
+const ConstantTaxes = lazy(() =>
+  import("../pages/protected/super-admin/constant/taxes/ConstantTaxes")
+);
+
 const routes = [
   {
     path: "/dashboard", // the url
@@ -147,6 +152,13 @@ const routes = [
     path: "/double-entry/ledger-summary",
     component: LedgerSummary,
   },
+
+  // Constant
+  {
+    path: "/constant/taxes",
+    component: ConstantTaxes,
+  },
+
   {
     path: "/user",
     component: User,

@@ -14,6 +14,9 @@ module.exports = Object.freeze({
         FORM_IMPORT_PRODUCT: "FORM_IMPORT_PRODUCT",
         FORM_CREATE_PRODUCT: "FORM_CREATE_PRODUCT",
 
+        // Constant
+        FORM_CREATE_CONSTANT_TAXES: "FORM_CREATE_CONSTANT_TAXES",
+
     },
 
     RIGHT_DRAWER_TYPES : {

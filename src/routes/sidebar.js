@@ -279,7 +279,7 @@ const routes = [
     name: "Constant",
     submenu: [
       {
-        path: "/app/staff/proposal",
+        path: "/app/constant/taxes",
         icon: "",
         name: "Taxes",
       },
