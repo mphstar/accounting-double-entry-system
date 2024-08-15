@@ -99,13 +99,18 @@ const FormCreateData = ({ extraObject, closeModal }) => {
             ))}
           </select>
         </label>
-        <label className="form-control w-full">
+        <label className="form-control w-full col-span-2 md:col-span-1">
           <div className="label">
             <span className="label-text font-semibold">Tax</span>
           </div>
-          <Select className="" isMulti={true} options={TaxOption} />
+          <Select
+            className="my-react-select-container"
+            classNamePrefix="my-react-select"
+            isMulti={true}
+            options={TaxOption}
+          />
         </label>
-        <label className="form-control w-full">
+        <label className="form-control w-full col-span-2 md:col-span-1">
           <div className="label">
             <span className="label-text font-semibold">Category</span>
           </div>
@@ -113,12 +118,14 @@ const FormCreateData = ({ extraObject, closeModal }) => {
             <option>Medical</option>
             <option>Clothing</option>
           </select>
-          <span className="text-xs leading-none -translate-y-3">
-            Please add constant category{" "}
-            <a className="btn btn-link p-0" href="#">
-              here
-            </a>
-          </span>
+          <div className="label">
+            <div className="text-xs leading-none label-text">
+              Please add constant category{" "}
+              <a className="btn btn-link p-0" href="#">
+                here
+              </a>
+            </div>
+          </div>
         </label>
         <label className="form-control w-full">
           <div className="label">

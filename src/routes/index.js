@@ -5,6 +5,7 @@ import { lazy } from "react";
 const Dashboard = lazy(() => import("../pages/protected/Dashboard"));
 const Welcome = lazy(() => import("../pages/protected/Welcome"));
 const Page404 = lazy(() => import("../pages/protected/404"));
+
 const Blank = lazy(() => import("../pages/protected/Blank"));
 const Charts = lazy(() => import("../pages/protected/Charts"));
 const Leads = lazy(() => import("../pages/protected/Leads"));
@@ -44,9 +45,13 @@ const StaffUser = lazy(() =>
   import("../pages/protected/super-admin/staff/StaffUser")
 );
 
-const StaffRole = lazy(() => import("../pages/protected/super-admin/staff/StaffRole"));
+const StaffRole = lazy(() =>
+  import("../pages/protected/super-admin/staff/StaffRole")
+);
 
-const ProductService = lazy(() => import("../pages/protected/super-admin/product-services/ProductService"));
+const ProductService = lazy(() =>
+  import("../pages/protected/super-admin/product-services/ProductService")
+);
 
 const routes = [
   {
@@ -113,7 +118,7 @@ const routes = [
     path: "/staff/user",
     component: StaffUser,
   },
-  
+
   {
     path: "/staff/role",
     component: StaffRole,
