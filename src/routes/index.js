@@ -62,6 +62,8 @@ const ConstantCategory = lazy(() => import("../pages/protected/super-admin/const
 
 const ConstantUnit = lazy(() => import("../pages/protected/super-admin/constant/unit/ConstantUnit"));
 
+const ConstantCustomField = lazy(() => import("../pages/protected/super-admin/constant/custom-field/ConstantCustomField"));
+
 const routes = [
   {
     path: "/dashboard", // the url
@@ -170,6 +172,10 @@ const routes = [
   {
     path: "/constant/unit",
     component: ConstantUnit,
+  },
+  {
+    path: "/constant/custom-field",
+    component: ConstantCustomField,
   },
 
 

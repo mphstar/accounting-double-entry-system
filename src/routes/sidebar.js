@@ -294,7 +294,7 @@ const routes = [
         name: "Unit",
       },
       {
-        path: "/app/staff/proposal",
+        path: "/app/constant/custom-field",
         icon: "",
         name: "Custom Field",
       },
