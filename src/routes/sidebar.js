@@ -289,7 +289,7 @@ const routes = [
         name: "Category",
       },
       {
-        path: "/app/staff/proposal",
+        path: "/app/constant/unit",
         icon: "",
         name: "Unit",
       },
