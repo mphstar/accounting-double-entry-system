@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setPageTitle } from "../../../../../features/common/headerSlice";
-import ConstantUnit from "../../../../../features/super-admin/constant/unit/ConstantUnit";
+import ConstantCustomField from "../../../../../features/company/constant/custom-field/ConstantCustomField";
 
 function InternalPage() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ function InternalPage() {
     dispatch(setPageTitle({ title: "Constant" }));
   }, []);
 
-  return <ConstantUnit />;
+  return <ConstantCustomField />;
 }
 
 export default InternalPage;

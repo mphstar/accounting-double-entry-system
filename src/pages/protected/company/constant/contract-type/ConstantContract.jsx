@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../../../../features/common/headerSlice'
-import ConstantTaxes from '../../../../../features/super-admin/constant/taxes/ConstantTaxes'
+import ConstantContract from '../../../../../features/company/constant/contract-type/ConstantContract'
 
 function InternalPage(){
 
@@ -12,7 +12,7 @@ function InternalPage(){
       }, [])
       
     return(
-        <ConstantTaxes />
+        <ConstantContract />
     )
 }
 

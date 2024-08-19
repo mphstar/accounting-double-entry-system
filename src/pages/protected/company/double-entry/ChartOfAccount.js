@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../../../features/common/headerSlice'
-import LedgerSummary from '../../../../features/super-admin/double-entry/ledger-summary'
+import ChartOfAccount from '../../../../features/company/double-entry/chart-of-account'
+
 
 function InternalPage(){
 
@@ -12,7 +13,7 @@ function InternalPage(){
       }, [])
       
     return(
-        <LedgerSummary />
+        <ChartOfAccount />
     )
 }
 

@@ -4,14 +4,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../features/common/modalSlice";
 import AddLeadModalBody from "../features/leads/components/AddLeadModalBody";
 import ConfirmationModalBody from "../features/common/components/ConfirmationModalBody";
-import FormModalUser from "../features/super-admin/staff/FormModalUser";
-import FormModalRole from "../features/super-admin/staff/FormModalRole";
-import FormImportData from "../features/super-admin/product-services/FormImportData";
-import FormCreateData from "../features/super-admin/product-services/FormCreateData";
-import ModalConstantTaxes from "../features/super-admin/constant/taxes/ModalConstantTaxes";
-import ModalConstantCategory from "../features/super-admin/constant/category/ModalConstantCategory";
-import ModalConstantUnit from "../features/super-admin/constant/unit/ModalConstantUnit";
-import ModalConstantField from "../features/super-admin/constant/custom-field/ModalConstantCustomField";
+import FormModalUser from "../features/company/staff/FormModalUser";
+import FormModalRole from "../features/company/staff/FormModalRole";
+import FormImportData from "../features/company/product-services/FormImportData";
+import FormCreateData from "../features/company/product-services/FormCreateData";
+import ModalConstantTaxes from "../features/company/constant/taxes/ModalConstantTaxes";
+import ModalConstantCategory from "../features/company/constant/category/ModalConstantCategory";
+import ModalConstantUnit from "../features/company/constant/unit/ModalConstantUnit";
+import ModalConstantField from "../features/company/constant/custom-field/ModalConstantCustomField";
+import ModalConstantContract from "../features/company/constant/contract-type/ModalConstantContract";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -92,6 +93,13 @@ function ModalLayout() {
               ),
               [MODAL_BODY_TYPES.FORM_CREATE_CONSTANT_CUSTOM_FIELD]: (
                 <ModalConstantField
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              [MODAL_BODY_TYPES.FORM_CREATE_CONSTANT_CONTRACT_TYPE]: (
+                <ModalConstantContract
                   extraObject={extraObject}
                   closeModal={close}
                 />

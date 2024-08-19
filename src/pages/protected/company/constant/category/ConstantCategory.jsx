@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../../../../features/common/headerSlice'
-import ConstantCategory from '../../../../../features/super-admin/constant/category/ConstantCategory'
+import ConstantCategory from '../../../../../features/company/constant/category/ConstantCategory'
 
 function InternalPage(){
 

@@ -24,49 +24,66 @@ const DocComponents = lazy(() => import("../pages/DocComponents"));
 // double entry
 
 const ChartOfAccount = lazy(() =>
-  import("../pages/protected/super-admin/double-entry/ChartOfAccount")
+  import("../pages/protected/company/double-entry/ChartOfAccount")
 );
 const JournalAccount = lazy(() =>
-  import("../pages/protected/super-admin/double-entry/JournalAccount")
+  import("../pages/protected/company/double-entry/JournalAccount")
 );
 const BalanceSheet = lazy(() =>
-  import("../pages/protected/super-admin/double-entry/BalanceSheet")
+  import("../pages/protected/company/double-entry/BalanceSheet")
 );
 const TrialBalance = lazy(() =>
-  import("../pages/protected/super-admin/double-entry/TrialBalance")
+  import("../pages/protected/company/double-entry/TrialBalance")
 );
 const LedgerSummary = lazy(() =>
-  import("../pages/protected/super-admin/double-entry/LedgerSummary")
+  import("../pages/protected/company/double-entry/LedgerSummary")
 );
 const User = lazy(() => import("../pages/protected/User"));
 
 // staff
 const StaffUser = lazy(() =>
-  import("../pages/protected/super-admin/staff/StaffUser")
+  import("../pages/protected/company/staff/StaffUser")
 );
 
 const StaffRole = lazy(() =>
-  import("../pages/protected/super-admin/staff/StaffRole")
+  import("../pages/protected/company/staff/StaffRole")
 );
 
 const ProductService = lazy(() =>
-  import("../pages/protected/super-admin/product-services/ProductService")
+  import("../pages/protected/company/product-services/ProductService")
 );
 
 // Constant
 const ConstantTaxes = lazy(() =>
-  import("../pages/protected/super-admin/constant/taxes/ConstantTaxes")
+  import("../pages/protected/company/constant/taxes/ConstantTaxes")
 );
 
-const ConstantCategory = lazy(() => import("../pages/protected/super-admin/constant/category/ConstantCategory"));
+const ConstantCategory = lazy(() =>
+  import("../pages/protected/company/constant/category/ConstantCategory")
+);
 
-const ConstantUnit = lazy(() => import("../pages/protected/super-admin/constant/unit/ConstantUnit"));
+const ConstantUnit = lazy(() =>
+  import("../pages/protected/company/constant/unit/ConstantUnit")
+);
 
-const ConstantCustomField = lazy(() => import("../pages/protected/super-admin/constant/custom-field/ConstantCustomField"));
+const ConstantCustomField = lazy(() =>
+  import("../pages/protected/company/constant/custom-field/ConstantCustomField")
+);
 
-const routes = [
+const ConstantContract = lazy(() =>
+  import("../pages/protected/company/constant/contract-type/ConstantContract")
+);
+
+const routesSuperAdmin = [
   {
-    path: "/dashboard", // the url
+    path: "/super-admin/dashboard", // the url
+    component: Dashboard, // view rendered
+  },
+];
+
+const routesCompany = [
+  {
+    path: "/company/dashboard", // the url
     component: Dashboard, // view rendered
   },
   {
@@ -126,58 +143,61 @@ const routes = [
     component: Blank,
   },
   {
-    path: "/staff/user",
+    path: "/company/staff/user",
     component: StaffUser,
   },
 
   {
-    path: "/staff/role",
+    path: "/company/staff/role",
     component: StaffRole,
   },
   {
-    path: "/product-services",
+    path: "/company/product-services",
     component: ProductService,
   },
   {
-    path: "/double-entry/chart",
+    path: "/company/double-entry/chart",
     component: ChartOfAccount,
   },
   {
-    path: "/double-entry/journal-account",
+    path: "/company/double-entry/journal-account",
     component: JournalAccount,
   },
   {
-    path: "/double-entry/balance-sheet",
+    path: "/company/double-entry/balance-sheet",
     component: BalanceSheet,
   },
   {
-    path: "/double-entry/trial-balance",
+    path: "/company/double-entry/trial-balance",
     component: TrialBalance,
   },
   {
-    path: "/double-entry/ledger-summary",
+    path: "/company/double-entry/ledger-summary",
     component: LedgerSummary,
   },
 
   // Constant
   {
-    path: "/constant/taxes",
+    path: "/company/constant/taxes",
     component: ConstantTaxes,
   },
-  
+
   {
-    path: "/constant/category",
+    path: "/company/constant/category",
     component: ConstantCategory,
   },
   {
-    path: "/constant/unit",
+    path: "/company/constant/unit",
     component: ConstantUnit,
   },
   {
-    path: "/constant/custom-field",
+    path: "/company/constant/custom-field",
     component: ConstantCustomField,
   },
-
+  {
+    path: "/company/constant/contract-type",
+    component: ConstantContract,
+  },
 
   {
     path: "/user",
@@ -185,4 +205,4 @@ const routes = [
   },
 ];
 
-export default routes;
+export { routesCompany, routesSuperAdmin };

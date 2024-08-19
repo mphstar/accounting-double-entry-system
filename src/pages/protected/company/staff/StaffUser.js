@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setPageTitle } from "../../../../features/common/headerSlice";
-import StaffRole from "../../../../features/super-admin/staff/StaffRole";
+import StaffUser from "../../../../features/company/staff/StaffUser";
 
 function InternalPage() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ function InternalPage() {
     dispatch(setPageTitle({ title: "Staff" }));
   }, []);
 
-  return <StaffRole />;
+  return <StaffUser />;
 }
 
 export default InternalPage;

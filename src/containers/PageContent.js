@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { Route, Routes } from "react-router-dom";
-import routes from "../routes";
+import { routesCompany, routesSuperAdmin } from "../routes";
 import { Suspense, lazy } from "react";
 import SuspenseContent from "./SuspenseContent";
 import { useSelector } from "react-redux";
@@ -29,7 +29,17 @@ function PageContent() {
       >
         <Suspense fallback={<SuspenseContent />}>
           <Routes>
-            {routes.map((route, key) => {
+            {routesSuperAdmin.map((route, key) => {
+              return (
+                <Route
+                  key={key}
+                  exact={true}
+                  path={`${route.path}`}
+                  element={<route.component />}
+                />
+              );
+            })}
+            {routesCompany.map((route, key) => {
               return (
                 <Route
                   key={key}
