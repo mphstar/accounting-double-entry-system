@@ -74,10 +74,20 @@ const ConstantContract = lazy(() =>
   import("../pages/protected/company/constant/contract-type/ConstantContract")
 );
 
+// Super Admin
+// Company
+const Company = lazy(() =>
+  import("../pages/protected/super-admin/company/Company")
+);
+
 const routesSuperAdmin = [
   {
     path: "/super-admin/dashboard", // the url
     component: Dashboard, // view rendered
+  },
+  {
+    path: "/super-admin/company",
+    component: Company,
   },
 ];
 

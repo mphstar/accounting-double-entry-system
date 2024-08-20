@@ -13,6 +13,7 @@ import ModalConstantCategory from "../features/company/constant/category/ModalCo
 import ModalConstantUnit from "../features/company/constant/unit/ModalConstantUnit";
 import ModalConstantField from "../features/company/constant/custom-field/ModalConstantCustomField";
 import ModalConstantContract from "../features/company/constant/contract-type/ModalConstantContract";
+import ModalCompany from "../features/super-admin/company/ModalCompany";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -103,6 +104,12 @@ function ModalLayout() {
                   extraObject={extraObject}
                   closeModal={close}
                 />
+              ),
+
+              // SUPERADMIN
+              // COMPANY
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_COMPANY]: (
+                <ModalCompany extraObject={extraObject} closeModal={close} />
               ),
 
               [MODAL_BODY_TYPES.DEFAULT]: <div></div>,

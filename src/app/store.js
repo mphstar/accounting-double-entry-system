@@ -4,6 +4,7 @@ import modalSlice from "../features/common/modalSlice";
 import rightDrawerSlice from "../features/common/rightDrawerSlice";
 import leadsSlice from "../features/leads/leadSlice";
 import filterSlice from "../features/company/double-entry/trial-balance/filterSlice";
+import CompanySlice from "../features/super-admin/company/CompanySlice";
 
 const combinedReducer = {
   header: headerSlice,
@@ -11,6 +12,9 @@ const combinedReducer = {
   modal: modalSlice,
   lead: leadsSlice,
   trialBalance: filterSlice,
+
+  // super admin
+  companySuperAdmin: CompanySlice,
 };
 
 export default configureStore({
