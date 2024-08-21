@@ -11,7 +11,7 @@ import HeadPage from "../../../components/HeadPage/HeadPage";
 import CustomTable from "../../../components/TablePage/CustomTable";
 import Paginate from "../../../components/Paginate/Paginate";
 import { MODAL_BODY_TYPES } from "../../../utils/globalConstantUtil";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { IoCloseCircleOutline, IoLinkOutline } from "react-icons/io5";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { VscKebabVertical } from "react-icons/vsc";
 import { deleteCompany, handleForm, setIsEdit } from "./CompanySlice";
@@ -107,7 +107,6 @@ const CardCompany = ({ data }) => {
               onClick={() => {
                 dispatch(deleteCompany(data.id));
                 console.log(data.id);
-                
               }}
             >
               <div className="flex items-center gap-2">
@@ -115,10 +114,27 @@ const CardCompany = ({ data }) => {
                 Delete
               </div>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                dispatch(
+                  openModal({
+                    bodyType:
+                      MODAL_BODY_TYPES.SUPERADMIN_FORM_RESET_PASSWORD_COMPANY,
+                    title: "Reset Password",
+                    extraObject: data,
+                  })
+                );
+              }}
+            >
               <div className="flex items-center gap-2">
                 <MdLockReset />
                 Reset Password
+              </div>
+            </li>
+            <li>
+              <div className="flex items-center gap-2">
+                <IoLinkOutline />
+                <span className="">Login as Company</span>
               </div>
             </li>
             <li>
@@ -139,10 +155,34 @@ const CardCompany = ({ data }) => {
       <p className="text-xs text-primary">{data.email}</p>
 
       <div className="flex items-center gap-2 w-full mt-4 mb-6">
-        <button className="btn w-full flex-1 btn-md btn-primary btn-outline">
+        <button
+          onClick={() => {
+            dispatch(
+              openModal({
+                bodyType: MODAL_BODY_TYPES.SUPERADMIN_FORM_UPGRADE_PLAN_COMPANY,
+                title: "Upgrade Plan",
+                extraObject: data,
+                size: "lg",
+              })
+            );
+          }}
+          className="btn w-full flex-1 btn-md btn-primary btn-outline"
+        >
           Upgrade Plan
         </button>
-        <button className="btn w-full flex-1 btn-md btn-primary btn-outline">
+        <button
+          onClick={() => {
+            dispatch(
+              openModal({
+                bodyType: MODAL_BODY_TYPES.SUPERADMIN_FORM_ADMIN_HUB_COMPANY,
+                title: "Company Info",
+                extraObject: data,
+                size: "lg",
+              })
+            );
+          }}
+          className="btn w-full flex-1 btn-md btn-primary btn-outline"
+        >
           AdminHub
         </button>
       </div>

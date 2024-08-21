@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addCompany, handleForm, resetForm, updateCompany } from "./CompanySlice";
 
 const ModalCompany = ({ extraObject, closeModal }) => {
   const dispatch = useDispatch();
 
-  const { form, companies, isEdit } = useSelector(
+  const { form, isEdit } = useSelector(
     (state) => state.companySuperAdmin
   );
 
