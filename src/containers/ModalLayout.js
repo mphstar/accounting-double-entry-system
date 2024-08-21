@@ -17,6 +17,7 @@ import ModalCompany from "../features/super-admin/company/ModalCompany";
 import ModalCompanyResetPassword from "../features/super-admin/company/ModalResetPassword";
 import ModalUpgradePlan from "../features/super-admin/company/ModalUpgradePlan";
 import ModalAdminHub from "../features/super-admin/company/ModalAdminHub";
+import ModalFormCreatePlan from "../features/super-admin/plan/ModalFormCreatePlan";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -34,7 +35,9 @@ function ModalLayout() {
 
       {/* Put this part before </body> tag */}
       <div className={`modal ${isOpen ? "modal-open" : ""}`}>
-        <div className={`modal-box   ${size == "lg" ? "max-w-5xl w-11/12" : ""}`}>
+        <div
+          className={`modal-box   ${size == "lg" ? "max-w-5xl w-11/12" : ""}`}
+        >
           <div className="flex items-center mb-4">
             <h3 className="font-semibold text-base text-start flex-1">
               {title}
@@ -129,6 +132,14 @@ function ModalLayout() {
               ),
               [MODAL_BODY_TYPES.SUPERADMIN_FORM_ADMIN_HUB_COMPANY]: (
                 <ModalAdminHub extraObject={extraObject} closeModal={close} />
+              ),
+
+              // PLAN
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_PLAN]: (
+                <ModalFormCreatePlan
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
               ),
 
               [MODAL_BODY_TYPES.DEFAULT]: <div></div>,

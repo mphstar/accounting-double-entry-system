@@ -80,6 +80,9 @@ const Company = lazy(() =>
   import("../pages/protected/super-admin/company/Company")
 );
 
+// Plan
+const Plan = lazy(() => import("../pages/protected/super-admin/plan/Plan"));
+
 const routesSuperAdmin = [
   {
     path: "/super-admin/dashboard", // the url
@@ -88,6 +91,10 @@ const routesSuperAdmin = [
   {
     path: "/super-admin/company",
     component: Company,
+  },
+  {
+    path: "/super-admin/plan",
+    component: Plan,
   },
 ];
 
