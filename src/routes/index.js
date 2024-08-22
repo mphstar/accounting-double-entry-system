@@ -88,6 +88,16 @@ const PlanRequest = lazy(() =>
   import("../pages/protected/super-admin/plan-request/PlanRequest")
 );
 
+// Coupon
+const Coupon = lazy(() =>
+  import("../pages/protected/super-admin/coupon/Coupon")
+);
+
+// Detail Coupon
+const DetailCoupon = lazy(() =>
+  import("../pages/protected/super-admin/coupon/detail/DetailCoupon")
+);
+
 const routesSuperAdmin = [
   {
     path: "/super-admin/dashboard", // the url
@@ -104,6 +114,14 @@ const routesSuperAdmin = [
   {
     path: "/super-admin/plan-request",
     component: PlanRequest,
+  },
+  {
+    path: "/super-admin/coupon",
+    component: Coupon,
+  },
+  {
+    path: "/super-admin/coupon/:id",
+    component: DetailCoupon,
   },
 ];
 

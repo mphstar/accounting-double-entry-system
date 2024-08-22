@@ -18,6 +18,7 @@ import ModalCompanyResetPassword from "../features/super-admin/company/ModalRese
 import ModalUpgradePlan from "../features/super-admin/company/ModalUpgradePlan";
 import ModalAdminHub from "../features/super-admin/company/ModalAdminHub";
 import ModalFormCreatePlan from "../features/super-admin/plan/ModalFormCreatePlan";
+import ModalFormCoupon from "@/features/super-admin/coupon/ModalFormCoupon";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -140,6 +141,11 @@ function ModalLayout() {
                   extraObject={extraObject}
                   closeModal={close}
                 />
+              ),
+
+              // COUPON
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_COUPON]: (
+                <ModalFormCoupon extraObject={extraObject} closeModal={close} />
               ),
 
               [MODAL_BODY_TYPES.DEFAULT]: <div></div>,
