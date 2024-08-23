@@ -98,6 +98,9 @@ const DetailCoupon = lazy(() =>
   import("../pages/protected/super-admin/coupon/detail/DetailCoupon")
 );
 
+// ORDER
+const Order = lazy(() => import("../pages/protected/super-admin/Order/Order"));
+
 const routesSuperAdmin = [
   {
     path: "/super-admin/dashboard", // the url
@@ -122,6 +125,10 @@ const routesSuperAdmin = [
   {
     path: "/super-admin/coupon/:id",
     component: DetailCoupon,
+  },
+  {
+    path: "/super-admin/order",
+    component: Order,
   },
 ];
 

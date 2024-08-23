@@ -19,6 +19,7 @@ import ModalUpgradePlan from "../features/super-admin/company/ModalUpgradePlan";
 import ModalAdminHub from "../features/super-admin/company/ModalAdminHub";
 import ModalFormCreatePlan from "../features/super-admin/plan/ModalFormCreatePlan";
 import ModalFormCoupon from "@/features/super-admin/coupon/ModalFormCoupon";
+import ModalDetailOrder from "@/features/super-admin/Order/ModalDetailOrder";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -146,6 +147,14 @@ function ModalLayout() {
               // COUPON
               [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_COUPON]: (
                 <ModalFormCoupon extraObject={extraObject} closeModal={close} />
+              ),
+
+              // ORDER
+              [MODAL_BODY_TYPES.SUPERADMIN_ORDER_DETAIL]: (
+                <ModalDetailOrder
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
               ),
 
               [MODAL_BODY_TYPES.DEFAULT]: <div></div>,
