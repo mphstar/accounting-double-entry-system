@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+[data-theme="dark"] .sun-editor-dark-mode .se-container {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+[data-theme="dark"] .sun-editor-dark-mode .se-toolbar {
+  background-color: #444 !important;
+  color: #fff !important;
+}
+
+[data-theme="dark"] .sun-editor-dark-mode .se-toolbar button {
+  color: #fff !important;
+}
+
+[data-theme="dark"] .sun-editor-dark-mode .se-wrapper,
+[data-theme="dark"] .sun-editor-dark-mode .se-wrapper-inner {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+[data-theme="dark"] .sun-editor-dark-mode .se-wrapper .se-placeholder::after {
+  color: #bbb !important;
+}
+
 @layer components {
   /* .my-react-select-container {
   } */
@@ -36,30 +60,30 @@
 }
 
 .loading-indicator:before {
-    content: '';
-    background: #00000080;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  .loading-indicator:after {
-    content: ' ';
-    position: fixed;
-    top: 40%;
-    left: 45%;
-    z-index: 10010;
-    color:white;
-    text-align:center;
-    font-weight:bold;
-    font-size:1.2rem;        
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #0474bf; /* Blue */
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
+  content: "";
+  background: #00000080;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.loading-indicator:after {
+  content: " ";
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  z-index: 10010;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #0474bf; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }

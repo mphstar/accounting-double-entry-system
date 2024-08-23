@@ -1,5 +1,5 @@
 import HeadPage from "@/components/HeadPage/HeadPage";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
 import {
@@ -27,6 +27,12 @@ const EmailTemplate = () => {
     setRichTextEditorHtml(content);
   };
 
+  const [currentTheme, setCurrentTheme] = useState(
+    localStorage.getItem("theme")
+  );
+
+  useEffect(() => {}, []);
+
   const template = [
     "New Bill Payment",
     "Customer Invoice Sent",
@@ -52,7 +58,9 @@ const EmailTemplate = () => {
           <div className="flex gap-2">
             <select className="select select-bordered" name="" id="">
               {template.map((item, index) => (
-                <option key={index} value={index}>{item}</option>
+                <option key={index} value={index}>
+                  {item}
+                </option>
               ))}
             </select>
           </div>
@@ -87,7 +95,7 @@ const EmailTemplate = () => {
 
         <div className="mt-6">
           <h1 className="label-text font-semibold mb-4">Email Message</h1>
-          <div>
+          <div className="sun-editor-dark-mode">
             <SunEditor
               autoFocus={true}
               lang="en"
