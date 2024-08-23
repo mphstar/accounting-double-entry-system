@@ -62,7 +62,7 @@ const routesSuperAdmin = [
     name: "Order",
   },
   {
-    path: "/app/super-admin/emil-template",
+    path: "/app/super-admin/email-template",
     icon: <MdOutlineMailOutline className={`${iconClasses} inline`} />,
     name: "Email Template",
   },
