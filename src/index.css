@@ -3,27 +3,33 @@
 @tailwind utilities;
 
 [data-theme="dark"] .sun-editor-dark-mode .se-container {
-  background-color: #333 !important;
+  background-color: #191E24 !important;
   color: #fff !important;
+  border-color: #191E24 !important;
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-toolbar {
-  background-color: #444 !important;
+  background-color: #191E24 !important;
   color: #fff !important;
+  border-color: #191E24 !important;
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-toolbar button {
+  background-color: #191E24 !important;
   color: #fff !important;
+  border-color: #191E24 !important;
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-wrapper,
 [data-theme="dark"] .sun-editor-dark-mode .se-wrapper-inner {
-  background-color: #333 !important;
+  background-color: #191E24 !important;
   color: #fff !important;
+  border-color: #191E24 !important;
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-wrapper .se-placeholder::after {
-  color: #bbb !important;
+  color: #191E24 !important;
+  border-color: #191E24 !important;
 }
 
 @layer components {

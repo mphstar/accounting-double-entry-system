@@ -27,9 +27,6 @@ const EmailTemplate = () => {
     setRichTextEditorHtml(content);
   };
 
-  const [currentTheme, setCurrentTheme] = useState(
-    localStorage.getItem("theme")
-  );
 
   useEffect(() => {}, []);
 

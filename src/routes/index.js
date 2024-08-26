@@ -106,6 +106,11 @@ const EmailTemplate = lazy(() =>
   import("../pages/protected/super-admin/email-template/EmailTemplate")
 );
 
+// Landing Page
+const LandingPage = lazy(() =>
+  import("../pages/protected/super-admin/landing-page/LandingPage")
+);
+
 const routesSuperAdmin = [
   {
     path: "/super-admin/dashboard", // the url
@@ -138,6 +143,10 @@ const routesSuperAdmin = [
   {
     path: "/super-admin/email-template",
     component: EmailTemplate,
+  },
+  {
+    path: "/super-admin/landing-page",
+    component: LandingPage,
   },
 ];
 
