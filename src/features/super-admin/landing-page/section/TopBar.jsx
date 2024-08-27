@@ -105,6 +105,9 @@ const TopBar = () => {
             onChange={handleChange}
           />
         </div>
+        <div className="flex w-full justify-end mt-12">
+          <button className="btn btn-success text-white">Save Changes</button>
+        </div>
       </div>
     </section>
   );

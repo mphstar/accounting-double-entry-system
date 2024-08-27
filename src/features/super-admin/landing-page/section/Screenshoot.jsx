@@ -1,26 +1,38 @@
 import CustomTable from "@/components/TablePage/CustomTable";
-import React, { useState } from "react";
+import React from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
-const CustomPage = () => {
-  const data = [
+const Screenshot = () => {
+  const dataScreenshotList = [
     {
       no: 1,
-      name: "About Us",
+      name: "Account Dashboard",
     },
     {
       no: 2,
-      name: "Terms and Conditions",
+      name: "Chart of Accounts",
     },
     {
       no: 3,
-      name: "Privacy Policy",
+      name: "Customer Overview",
+    },
+    {
+      no: 4,
+      name: "Invoice Detail",
+    },
+    {
+      no: 5,
+      name: "Vendor Overview",
+    },
+    {
+      no: 6,
+      name: "Bill Detail",
     },
   ];
 
-  const COLUMN = [
+  const ColumnScreenshotList = [
     {
       value: "No",
       className: "w-12",
@@ -35,8 +47,8 @@ const CustomPage = () => {
     },
   ];
 
-  const ROW = [
-    ...data.map((item, index) => [
+  const RowScreenshotList = [
+    ...dataScreenshotList.map((item, index) => [
       {
         value: item.no,
         className: "",
@@ -62,42 +74,37 @@ const CustomPage = () => {
   ];
 
   return (
-    <section id="custom-page">
+    <section id="screenshot">
       <div className="flex flex-col bg-base-100 p-5 rounded-md drop-shadow">
-        <div className="flex gap-2 justify-between items-center">
-          <h1 className="font-semibold">Custom Page</h1>
+        <div className="flex gap-2 justify-between items-center ">
+          <h1 className="font-semibold">Screenshot</h1>
+          <input
+            type="checkbox"
+            name=""
+            className="toggle toggle-primary"
+            id=""
+          />
         </div>
-        <div className="flex flex-col md:flex-row gap-2 mt-6">
-          <div className="form-control">
-            <label className="form-control gap-2">
-              <span className="label-text font-semibold">Site Logo</span>
-              <input
-                type="file"
-                name=""
-                className="file-input file-input-bordered"
-                id=""
-              />
-            </label>
-            <img
-              className="w-40 h-40 rounded-md mt-4 object-cover"
-              src="https://picsum.photos/200/300"
-              alt=""
+        <div className="grid grid-cols-2 gap-2 mt-6">
+          <label className="form-control gap-2">
+            <span className="label-text font-semibold">Heading</span>
+            <input
+              type="text"
+              className="input input-bordered"
+              value={"AccountGo SaaS Accounting and Billing Tool"}
             />
-          </div>
-          <div className="form-control w-full">
-            <label className="form-control gap-2">
-              <span className="label-text font-semibold">Site Description</span>
-              <input
-                type="text"
-                name=""
-                className="input input-bordered"
-                value={
-                  "We build modern web tools to help you jump-start your daily business work."
-                }
-                id=""
-              />
-            </label>
-          </div>
+          </label>
+          <label className="form-control gap-2">
+            <span className="label-text font-semibold">Description</span>
+            <input
+              type="text"
+              className="input input-bordered"
+              value={
+                "Use these awesome forms to login or create new account in your project for free."
+              }
+            />
+          </label>
+          
         </div>
         <div className="flex w-full justify-end mt-12">
           <button className="btn btn-success text-white">Save Changes</button>
@@ -106,14 +113,14 @@ const CustomPage = () => {
 
       <div className="flex flex-col bg-base-100 p-5 rounded-md mt-4 drop-shadow">
         <div className="flex gap-2 justify-between items-center mb-4">
-          <h1 className="font-semibold">Menu Bar</h1>
+          <h1 className="font-semibold">Screenshot List</h1>
           <button className="btn btn-sm btn-square btn-success text-white">
             <GoPlus />
           </button>
         </div>
         <CustomTable
-          column={COLUMN}
-          rows={ROW}
+          column={ColumnScreenshotList}
+          rows={RowScreenshotList}
           isComponent={true}
           withoutAction={true}
         />
@@ -122,4 +129,4 @@ const CustomPage = () => {
   );
 };
 
-export default CustomPage;
+export default Screenshot;

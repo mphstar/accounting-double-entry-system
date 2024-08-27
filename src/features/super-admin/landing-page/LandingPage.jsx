@@ -5,6 +5,13 @@ import TemplatePage from "./TemplatePage";
 import TopBar from "./section/TopBar";
 import CustomPage from "./section/CustomPage";
 import HomeSection from "./section/HomeSection";
+import Features from "./section/Features";
+import Discover from "./section/Discover";
+import Screenshot from "./section/Screenshoot";
+import PricingPlan from "./section/PricingPlan";
+import Faq from "./section/Faq";
+import Testimoni from "./section/Testimoni";
+import JoinUs from "./section/JoinUs";
 
 const LandingPage = () => {
   return (
@@ -20,6 +27,13 @@ const LandingPage = () => {
           <TopBar />
           <CustomPage />
           <HomeSection />
+          <Features />
+          <Discover />
+          <Screenshot />
+          <PricingPlan />
+          <Faq />
+          <Testimoni />
+          <JoinUs />
         </div>
       </TemplatePage>
     </div>

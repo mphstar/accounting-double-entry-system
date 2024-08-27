@@ -33,13 +33,17 @@ const TemplatePage = ({ children }) => {
           title={"Home"}
           isActive={false}
         />
-        <ItemNav title={"Features"} isActive={false} />
-        <ItemNav title={"Discover"} isActive={false} />
-        <ItemNav title={"Screenshots"} isActive={false} />
-        <ItemNav title={"Pricing Plan"} isActive={false} />
-        <ItemNav title={"FAQ"} isActive={false} />
-        <ItemNav title={"Testimonials"} isActive={false} />
-        <ItemNav title={"Join Us"} isActive={false} />
+        <ItemNav
+          onClick={() => scrollToSection("features")}
+          title={"Features"}
+          isActive={false}
+        />
+        <ItemNav onClick={() => scrollToSection("discover")} title={"Discover"} isActive={false} />
+        <ItemNav onClick={() => scrollToSection("screenshot")} title={"Screenshots"} isActive={false} />
+        <ItemNav onClick={() => scrollToSection("pricing-plan")} title={"Pricing Plan"} isActive={false} />
+        <ItemNav onClick={() => scrollToSection("faq")} title={"FAQ"} isActive={false} />
+        <ItemNav onClick={() => scrollToSection("testimoni")} title={"Testimonials"} isActive={false} />
+        <ItemNav onClick={() => scrollToSection("joinus")} title={"Join Us"} isActive={false} />
       </ul>
       {children}
     </div>
