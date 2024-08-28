@@ -75,6 +75,9 @@ const ConstantContract = lazy(() =>
 );
 
 // Super Admin
+// Dashboard
+const DashboardSuperAdmin = lazy(() => import("../pages/protected/super-admin//dashboard/Dashboard"));
+
 // Company
 const Company = lazy(() =>
   import("../pages/protected/super-admin/company/Company")
@@ -119,7 +122,7 @@ const RefferalProgram = lazy(() =>
 const routesSuperAdmin = [
   {
     path: "/super-admin/dashboard", // the url
-    component: Dashboard, // view rendered
+    component: DashboardSuperAdmin, // view rendered
   },
   {
     path: "/super-admin/company",
