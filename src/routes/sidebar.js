@@ -284,12 +284,12 @@ const routesCompany = [
     name: "Report",
     submenu: [
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/transaction",
         icon: "",
         name: "Transaction",
       },
       {
-        path: "/app/company/staff/retainers",
+        path: "/app/company/report/account-statement",
         icon: "",
         name: "Account Statement",
       },

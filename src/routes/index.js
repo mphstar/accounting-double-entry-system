@@ -74,9 +74,24 @@ const ConstantContract = lazy(() =>
   import("../pages/protected/company/constant/contract-type/ConstantContract")
 );
 
+// REPORT
+
+// Transaction
+const Transaction = lazy(() =>
+  import("../pages/protected/company/report/transaction/Transaction")
+);
+
+const AccountStatement = lazy(() =>
+  import("../pages/protected/company/report/account-statement/AccountStatement")
+);
+
+// END REPORT
+
 // Super Admin
 // Dashboard
-const DashboardSuperAdmin = lazy(() => import("../pages/protected/super-admin//dashboard/Dashboard"));
+const DashboardSuperAdmin = lazy(() =>
+  import("../pages/protected/super-admin//dashboard/Dashboard")
+);
 
 // Company
 const Company = lazy(() =>
@@ -278,6 +293,15 @@ const routesCompany = [
   {
     path: "/company/constant/contract-type",
     component: ConstantContract,
+  },
+  // REPORT
+  {
+    path: "/company/report/transaction",
+    component: Transaction,
+  },
+  {
+    path: "/company/report/account-statement",
+    component: AccountStatement,
   },
 
   {
