@@ -13,7 +13,7 @@ import Faq from "./section/Faq";
 import Testimoni from "./section/Testimoni";
 import JoinUs from "./section/JoinUs";
 
-const LandingPage = () => {
+const RefferalProgram = () => {
   return (
     <div className="flex flex-col">
       <HeadPage
@@ -40,4 +40,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default RefferalProgram;

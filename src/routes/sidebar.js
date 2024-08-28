@@ -72,7 +72,7 @@ const routesSuperAdmin = [
     name: "Landing Page",
   },
   {
-    path: "/app/super-admin/refferal",
+    path: "/app/super-admin/refferal-program",
     icon: <GoCrossReference className={`${iconClasses} inline`} />,
     name: "Refferal Program",
   },

@@ -111,6 +111,11 @@ const LandingPage = lazy(() =>
   import("../pages/protected/super-admin/landing-page/LandingPage")
 );
 
+// Refferal Program
+const RefferalProgram = lazy(() =>
+  import("../pages/protected/super-admin/refferal-program/RefferalProgram")
+);
+
 const routesSuperAdmin = [
   {
     path: "/super-admin/dashboard", // the url
@@ -147,6 +152,10 @@ const routesSuperAdmin = [
   {
     path: "/super-admin/landing-page",
     component: LandingPage,
+  },
+  {
+    path: "/super-admin/refferal-program",
+    component: RefferalProgram,
   },
 ];
 
