@@ -85,6 +85,14 @@ const AccountStatement = lazy(() =>
   import("../pages/protected/company/report/account-statement/AccountStatement")
 );
 
+const ProductStock = lazy(() =>
+  import("../pages/protected/company/report/product-stock/ProductStock")
+);
+
+const TaxSummary = lazy(() =>
+  import("../pages/protected/company/report/tax-summary/TaxSummary")
+);
+
 // END REPORT
 
 // Super Admin
@@ -303,7 +311,14 @@ const routesCompany = [
     path: "/company/report/account-statement",
     component: AccountStatement,
   },
-
+  {
+    path: "/company/report/product-stock",
+    component: ProductStock,
+  },
+  {
+    path: "/company/report/tax-summary",
+    component: TaxSummary,
+  },
   {
     path: "/user",
     component: User,

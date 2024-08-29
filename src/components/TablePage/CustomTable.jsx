@@ -9,9 +9,7 @@ const CustomTable = ({
 }) => {
   return (
     <div
-      className={`overflow-x-auto ${
-        isComponent ? "" : "bg-base-100 p-6 drop-shadow"
-      } w-full`}
+      className={`${isComponent ? "" : "bg-base-100 p-6 drop-shadow"} w-full`}
     >
       {!withoutAction && (
         <div
@@ -55,29 +53,31 @@ const CustomTable = ({
           </div>
         </div>
       )}
-      <table className="table">
-        {/* head */}
-        <thead>
-          <tr>
-            {column.map((item, index) => (
-              <th className={item.className} key={index}>
-                {item.value}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, index) => (
-            <tr className="hover" key={index}>
-              {row.map((item, index) => (
-                <td className={item.className} key={index}>
+      <div className="flex w-full overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              {column.map((item, index) => (
+                <th className={item.className} key={index}>
                   {item.value}
-                </td>
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((row, index) => (
+              <tr className="hover" key={index}>
+                {row.map((item, index) => (
+                  <td colSpan={item.colSpan ?? 1} className={item.className} key={index}>
+                    {item.value}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

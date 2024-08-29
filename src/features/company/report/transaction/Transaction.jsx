@@ -72,7 +72,7 @@ const Transaction = () => {
                 <BiExport />
               </button>
             </div>
-            <div className="tooltip" data-tip="Export">
+            <div className="tooltip" data-tip="Download">
               <button
                 onClick={() => {}}
                 className="btn btn-square btn-primary btn-sm"

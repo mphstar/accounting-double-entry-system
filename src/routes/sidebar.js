@@ -309,7 +309,7 @@ const routesCompany = [
         name: "Income VS Expense",
       },
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/tax-summary",
         icon: "",
         name: "Tax Summary",
       },
@@ -329,7 +329,7 @@ const routesCompany = [
         name: "Bill Summary",
       },
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/product-stock",
         icon: "",
         name: "Product Stock",
       },
