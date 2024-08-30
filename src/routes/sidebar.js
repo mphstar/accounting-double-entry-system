@@ -5,6 +5,7 @@ import { BsPeople } from "react-icons/bs";
 import { TbBusinessplan, TbReportMoney } from "react-icons/tb";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import {
+  LuBox,
   LuGitPullRequestDraft,
   LuLocateFixed,
   LuShoppingCart,
@@ -113,6 +114,11 @@ const routesCompany = [
     name: "Product & Services",
   },
   {
+    path: "/app/company/product-stock",
+    icon: <LuBox className={`${iconClasses} inline`} />,
+    name: "Product Stock",
+  },
+  {
     path: "/app/company/customer",
     icon: <FiUserPlus className={`${iconClasses} inline`} />,
     name: "Customer",
@@ -146,12 +152,12 @@ const routesCompany = [
     name: "Banking",
     submenu: [
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/banking/account",
         icon: "",
         name: "Account",
       },
       {
-        path: "/app/company/staff/retainers",
+        path: "/app/company/banking/transfer",
         icon: "",
         name: "Transfer",
       },
@@ -243,7 +249,7 @@ const routesCompany = [
   },
 
   {
-    path: "/app/company/vendor",
+    path: "/app/company/budget-planner",
     icon: <TbBusinessplan className={`${iconClasses} inline`} />,
     name: "Budget Planner",
   },
@@ -253,12 +259,12 @@ const routesCompany = [
     name: "Contract",
   },
   {
-    path: "/app/company/vendor",
+    path: "/app/company/goal",
     icon: <GoGoal className={`${iconClasses} inline`} />,
     name: "Goal",
   },
   {
-    path: "/app/company/vendor",
+    path: "/app/company/assets",
     icon: <MdWebAsset className={`${iconClasses} inline`} />,
     name: "Assets",
   },

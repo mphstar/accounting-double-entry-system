@@ -95,6 +95,34 @@ const TaxSummary = lazy(() =>
 
 // END REPORT
 
+// Banking
+
+const Account = lazy(() =>
+  import("../pages/protected/company/banking/account/Account")
+);
+
+const Transfer = lazy(() =>
+  import("../pages/protected/company/banking/transfer/Transfer")
+);
+
+// END Banking
+
+// Budget Planner
+const BudgetPlanner = lazy(() =>
+  import("../pages/protected/company/budget-planner/BudgetPlanner")
+);
+
+// Goal
+const Goal = lazy(() => import("../pages/protected/company/goal/Goal"));
+
+// Assets
+const Assets = lazy(() => import("../pages/protected/company/assets/Assets"));
+
+// Product Stock
+const ProductStockCompany = lazy(() =>
+  import("../pages/protected/company/report/product-stock/ProductStock")
+);
+
 // Super Admin
 // Dashboard
 const DashboardSuperAdmin = lazy(() =>
@@ -318,6 +346,30 @@ const routesCompany = [
   {
     path: "/company/report/tax-summary",
     component: TaxSummary,
+  },
+  {
+    path: "/company/banking/account",
+    component: Account,
+  },
+  {
+    path: "/company/banking/transfer",
+    component: Transfer,
+  },
+  {
+    path: "/company/budget-planner",
+    component: BudgetPlanner,
+  },
+  {
+    path: "/company/goal",
+    component: Goal,
+  },
+  {
+    path: "/company/assets",
+    component: Assets,
+  },
+  {
+    path: "/company/product-stock",
+    component: ProductStockCompany,
   },
   {
     path: "/user",
