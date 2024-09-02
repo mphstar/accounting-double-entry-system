@@ -123,6 +123,20 @@ const ProductStockCompany = lazy(() =>
   import("../pages/protected/company/report/product-stock/ProductStock")
 );
 
+// Customer
+const Customer = lazy(() =>
+  import("../pages/protected/company/customer/Customer")
+);
+const DetailCustomer = lazy(() =>
+  import("../pages/protected/company/customer/detail/CustomerDetail")
+);
+
+// Presale
+// Proposal
+const Proposal = lazy(() =>
+  import("../pages/protected/company/presale/proposal/Proposal")
+);
+
 // Super Admin
 // Dashboard
 const DashboardSuperAdmin = lazy(() =>
@@ -306,6 +320,18 @@ const routesCompany = [
   {
     path: "/company/double-entry/ledger-summary",
     component: LedgerSummary,
+  },
+  {
+    path: "/company/customer",
+    component: Customer,
+  },
+  {
+    path: "/company/customer/:id",
+    component: DetailCustomer,
+  },
+  {
+    path: "/company/presale/proposal",
+    component: Proposal,
   },
 
   // Constant

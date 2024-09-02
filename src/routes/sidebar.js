@@ -134,7 +134,7 @@ const routesCompany = [
     name: "Presale",
     submenu: [
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/presale/proposal",
         icon: "",
         name: "Proposal",
       },

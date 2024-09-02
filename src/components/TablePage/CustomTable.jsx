@@ -11,6 +11,7 @@ const CustomTable = ({
     <div
       className={`${isComponent ? "" : "bg-base-100 p-6 drop-shadow"} w-full`}
     >
+      {title && <h1 className="font-semibold mb-4">{title}</h1>}
       {!withoutAction && (
         <div
           className={`flex items-center flex-wrap gap-2 w-full ${
@@ -69,7 +70,11 @@ const CustomTable = ({
             {rows.map((row, index) => (
               <tr className="hover" key={index}>
                 {row.map((item, index) => (
-                  <td colSpan={item.colSpan ?? 1} className={item.className} key={index}>
+                  <td
+                    colSpan={item.colSpan ?? 1}
+                    className={item.className}
+                    key={index}
+                  >
                     {item.value}
                   </td>
                 ))}

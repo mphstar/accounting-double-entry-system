@@ -93,4 +93,4 @@ const ProductStock = () => {
   );
 };
 
-export default Goal;
+export default ProductStock;
