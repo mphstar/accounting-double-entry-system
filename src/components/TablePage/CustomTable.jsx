@@ -19,7 +19,7 @@ const CustomTable = ({
           }`}
         >
           <div className="flex flex-col flex-1">
-            {title && <h1 className="font-semibold mb-4">{title}</h1>}
+            
             <div className="flex flex-col md:flex-row gap-2 items-center">
               <div className="flex gap-2 items-center flex-1">
                 <select className="select select-bordered" name="" id="">

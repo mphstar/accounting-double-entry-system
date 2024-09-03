@@ -137,6 +137,26 @@ const Proposal = lazy(() =>
   import("../pages/protected/company/presale/proposal/Proposal")
 );
 
+// Retainer
+const Retainers = lazy(() =>
+  import("../pages/protected/company/presale/retainers/Retainers")
+);
+
+// Income
+// Invoice
+const Invoice = lazy(() =>
+  import("../pages/protected/company/income/invoice/Invoice")
+);
+const DetailInvoice = lazy(() =>
+  import("../pages/protected/company/income/invoice/detail/InvoiceDetail")
+);
+
+// Vendor
+const Vendor = lazy(() => import("../pages/protected/company/vendor/Vendor"));
+const DetailVendor = lazy(() =>
+  import("../pages/protected/company/vendor/detail/VendorDetail")
+);
+
 // Super Admin
 // Dashboard
 const DashboardSuperAdmin = lazy(() =>
@@ -332,6 +352,26 @@ const routesCompany = [
   {
     path: "/company/presale/proposal",
     component: Proposal,
+  },
+  {
+    path: "/company/presale/retainers",
+    component: Retainers,
+  },
+  {
+    path: "/company/income/invoice",
+    component: Invoice,
+  },
+  {
+    path: "/company/income/invoice/:id",
+    component: DetailInvoice,
+  },
+  {
+    path: "/company/vendor",
+    component: Vendor,
+  },
+  {
+    path: "/company/vendor/:id",
+    component: DetailVendor,
   },
 
   // Constant

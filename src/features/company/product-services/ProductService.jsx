@@ -39,24 +39,32 @@ const ProductService = () => {
         breadcrumb={"Product & Services"}
         actions={
           <div className="flex gap-2">
-            <button
-              onClick={() => ModalImport({ title: "Import Product CSV" })}
-              className="btn btn-square btn-primary btn-sm"
-            >
-              <TbFileImport />
-            </button>
-            <button
-              onClick={() => {}}
-              className="btn btn-square btn-warning btn-sm"
-            >
-              <TbFileExport />
-            </button>
-            <button
-              onClick={() => ModalForm({title: "Create Product & Services"})}
-              className="btn btn-square btn-success text-white btn-sm"
-            >
-              +
-            </button>
+            <div className="tooltip" data-tip="Import">
+              <button
+                onClick={() => ModalImport({ title: "Import Product CSV" })}
+                className="btn btn-square btn-primary btn-sm"
+              >
+                <TbFileImport />
+              </button>
+            </div>
+            <div className="tooltip" data-tip="Export">
+              <button
+                onClick={() => {}}
+                className="btn btn-square btn-warning btn-sm"
+              >
+                <TbFileExport />
+              </button>
+            </div>
+            <div className="tooltip" data-tip="Add Data">
+              <button
+                onClick={() =>
+                  ModalForm({ title: "Create Product & Services" })
+                }
+                className="btn btn-square btn-success text-white btn-sm"
+              >
+                +
+              </button>
+            </div>
           </div>
         }
       />

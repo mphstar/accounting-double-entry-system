@@ -139,7 +139,7 @@ const routesCompany = [
         name: "Proposal",
       },
       {
-        path: "/app/company/staff/retainers",
+        path: "/app/company/presale/retainers",
         icon: "",
         name: "Retainers",
       },
@@ -170,7 +170,7 @@ const routesCompany = [
     name: "Income",
     submenu: [
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/income/invoice",
         icon: "",
         name: "Invoice",
       },
