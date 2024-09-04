@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.zindex {
+  z-index: 9999 !important;
+}
+
 [data-theme="dark"] .sun-editor-dark-mode .se-container {
   background-color: #191E24 !important;
   color: #fff !important;

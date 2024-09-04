@@ -118,9 +118,14 @@ const Retainers = () => {
     ...dataRetainer.map((item) => [
       {
         value: (
-          <button className="btn btn-primary btn-outline">
-            {item.retainer}
-          </button>
+          <Link
+            to={`/app/company/presale/retainers/${btoa(item.retainer)}`}
+            className="link"
+          >
+            <button className="btn btn-primary btn-outline">
+              {item.retainer}
+            </button>
+          </Link>
         ),
         className: "",
       },

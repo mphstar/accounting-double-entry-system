@@ -111,9 +111,11 @@ const CustomerDetail = () => {
     ...proposals.map((item) => [
       {
         value: (
-          <button className="btn btn-primary btn-outline">
-            {item.proposalId}
-          </button>
+          <Link to={`/app/company/presale/proposal/${btoa(item.proposalId)}`}>
+            <button className="btn btn-primary btn-outline">
+              {item.proposalId}
+            </button>
+          </Link>
         ),
         className: "",
       },

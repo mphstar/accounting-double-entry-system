@@ -137,9 +137,17 @@ const Proposal = lazy(() =>
   import("../pages/protected/company/presale/proposal/Proposal")
 );
 
+const DetailProposal = lazy(() =>
+  import("../pages/protected/company/presale/proposal/detail/ProposalDetail")
+);
+
 // Retainer
 const Retainers = lazy(() =>
   import("../pages/protected/company/presale/retainers/Retainers")
+);
+
+const DetailRetainer = lazy(() =>
+  import("../pages/protected/company/presale/retainers/detail/RetainerDetail")
 );
 
 // Income
@@ -354,9 +362,19 @@ const routesCompany = [
     component: Proposal,
   },
   {
+    path: "/company/presale/proposal/:id",
+    component: DetailProposal,
+  },
+  {
+    path: "/company/presale/retainers/:id",
+    component: DetailRetainer,
+  },
+
+  {
     path: "/company/presale/retainers",
     component: Retainers,
   },
+
   {
     path: "/company/income/invoice",
     component: Invoice,

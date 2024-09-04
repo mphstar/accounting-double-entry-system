@@ -127,9 +127,14 @@ const Proposal = () => {
     ...proposals.map((item) => [
       {
         value: (
-          <button className="btn btn-primary btn-outline">
-            {item.proposalId}
-          </button>
+          <Link
+            to={`/app/company/presale/proposal/${btoa(item.proposalId)}`}
+            className="link"
+          >
+            <button className="btn btn-primary btn-outline">
+              {item.proposalId}
+            </button>
+          </Link>
         ),
         className: "",
       },
