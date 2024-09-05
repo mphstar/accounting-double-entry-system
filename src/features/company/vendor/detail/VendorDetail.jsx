@@ -6,6 +6,7 @@ import { TfiReload } from "react-icons/tfi";
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 import { FaRegCopy } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const VendorDetail = () => {
   const cekStatus = (status) => {
@@ -60,7 +61,9 @@ const VendorDetail = () => {
     ...bill.map((item) => [
       {
         value: (
-          <button className="btn btn-primary btn-outline">{item.bill}</button>
+          <Link to={`/app/company/expense/bill/${btoa(item.bill)}`}>
+            <button className="btn btn-primary btn-outline">{item.bill}</button>
+          </Link>
         ),
         className: "",
       },

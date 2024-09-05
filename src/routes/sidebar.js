@@ -175,12 +175,12 @@ const routesCompany = [
         name: "Invoice",
       },
       {
-        path: "/app/company/staff/retainers",
+        path: "/app/company/income/revenue",
         icon: "",
         name: "Revenue",
       },
       {
-        path: "/app/company/staff/retainers",
+        path: "/app/company/income/credit-note",
         icon: "",
         name: "Credit Note",
       },
@@ -193,17 +193,17 @@ const routesCompany = [
     name: "Expense",
     submenu: [
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/expense/bill",
         icon: "",
         name: "Bill",
       },
       {
-        path: "/app/company/staff/retainers",
+        path: "/app/company/expense/payment",
         icon: "",
         name: "Payment",
       },
       {
-        path: "/app/company/staff/retainers",
+        path: "/app/company/expense/debit-note",
         icon: "",
         name: "Debit Note",
       },
@@ -269,12 +269,12 @@ const routesCompany = [
     name: "Assets",
   },
   {
-    path: "/app/company/vendor",
+    path: "/app/company/plan",
     icon: <IoTrophyOutline className={`${iconClasses} inline`} />,
     name: "Plan",
   },
   {
-    path: "/app/company/vendor",
+    path: "/app/company/order",
     icon: <LiaCartPlusSolid className={`${iconClasses} inline`} />,
     name: "Order",
   },

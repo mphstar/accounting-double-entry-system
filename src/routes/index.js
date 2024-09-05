@@ -150,6 +150,23 @@ const DetailRetainer = lazy(() =>
   import("../pages/protected/company/presale/retainers/detail/RetainerDetail")
 );
 
+// Expense
+// Bill
+const Bill = lazy(() => import("../pages/protected/company/expense/bill/Bill"));
+const DetailBill = lazy(() =>
+  import("../pages/protected/company/expense/bill/detail/BillDetail")
+);
+
+// Payment
+const Payment = lazy(() =>
+  import("../pages/protected/company/expense/payment/Payment")
+);
+
+// Debit Note
+const DebitNote = lazy(() =>
+  import("../pages/protected/company/expense/debit-note/DebitNote")
+);
+
 // Income
 // Invoice
 const Invoice = lazy(() =>
@@ -159,11 +176,27 @@ const DetailInvoice = lazy(() =>
   import("../pages/protected/company/income/invoice/detail/InvoiceDetail")
 );
 
+// Revenue
+const Revenue = lazy(() =>
+  import("../pages/protected/company/income/revenue/Revenue")
+);
+
+// Credit Note
+const CreditNote = lazy(() =>
+  import("../pages/protected/company/income/credit-note/CreditNote")
+);
+
 // Vendor
 const Vendor = lazy(() => import("../pages/protected/company/vendor/Vendor"));
 const DetailVendor = lazy(() =>
   import("../pages/protected/company/vendor/detail/VendorDetail")
 );
+
+// Plan
+const PlanCompany = lazy(() => import("../pages/protected/company/plan/Plan"));
+
+// Order
+const OrderCompany = lazy(() => import("../pages/protected/company/order/Order"));
 
 // Super Admin
 // Dashboard
@@ -376,6 +409,23 @@ const routesCompany = [
   },
 
   {
+    path: "/company/expense/bill",
+    component: Bill,
+  },
+
+  {
+    path: "/company/expense/bill/:id",
+    component: DetailBill,
+  },
+  {
+    path: "/company/expense/payment",
+    component: Payment,
+  },
+  {
+    path: "/company/expense/debit-note",
+    component: DebitNote,
+  },
+  {
     path: "/company/income/invoice",
     component: Invoice,
   },
@@ -384,12 +434,28 @@ const routesCompany = [
     component: DetailInvoice,
   },
   {
+    path: "/company/income/revenue",
+    component: Revenue,
+  },
+  {
+    path: "/company/income/credit-note",
+    component: CreditNote,
+  },
+  {
     path: "/company/vendor",
     component: Vendor,
   },
   {
     path: "/company/vendor/:id",
     component: DetailVendor,
+  },
+  {
+    path: "/company/plan",
+    component: PlanCompany,
+  },
+  {
+    path: "/company/order",
+    component: OrderCompany,
   },
 
   // Constant
