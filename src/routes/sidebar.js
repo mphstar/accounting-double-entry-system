@@ -254,7 +254,7 @@ const routesCompany = [
     name: "Budget Planner",
   },
   {
-    path: "/app/company/vendor",
+    path: "/app/company/contract",
     icon: <TbBusinessplan className={`${iconClasses} inline`} />,
     name: "Contract",
   },
@@ -279,7 +279,7 @@ const routesCompany = [
     name: "Order",
   },
   {
-    path: "/app/company/vendor",
+    path: "/app/company/notification-template",
     icon: <IoMdNotificationsOutline className={`${iconClasses} inline`} />,
     name: "Notification Template",
   },
@@ -300,12 +300,12 @@ const routesCompany = [
         name: "Account Statement",
       },
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/income-summary",
         icon: "",
         name: "Income Summary",
       },
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/expense-summary",
         icon: "",
         name: "Expense Summary",
       },

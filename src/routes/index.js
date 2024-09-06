@@ -89,6 +89,13 @@ const ProductStock = lazy(() =>
   import("../pages/protected/company/report/product-stock/ProductStock")
 );
 
+const IncomeSummary = lazy(() =>
+  import("../pages/protected/company/report/income-summary/IncomeSummary")
+);
+const ExpenseSummary = lazy(() =>
+  import("../pages/protected/company/report/expense-summary/ExpenseSummary")
+);
+
 const TaxSummary = lazy(() =>
   import("../pages/protected/company/report/tax-summary/TaxSummary")
 );
@@ -196,7 +203,21 @@ const DetailVendor = lazy(() =>
 const PlanCompany = lazy(() => import("../pages/protected/company/plan/Plan"));
 
 // Order
-const OrderCompany = lazy(() => import("../pages/protected/company/order/Order"));
+const OrderCompany = lazy(() =>
+  import("../pages/protected/company/order/Order")
+);
+
+// Contract
+const Contract = lazy(() =>
+  import("../pages/protected/company/contract/Contract")
+);
+
+// Notification Template
+const NotificationTemplate = lazy(() =>
+  import(
+    "../pages/protected/company/notification-template/NotificationTemplate"
+  )
+);
 
 // Super Admin
 // Dashboard
@@ -457,7 +478,14 @@ const routesCompany = [
     path: "/company/order",
     component: OrderCompany,
   },
-
+  {
+    path: "/company/contract",
+    component: Contract,
+  },
+  {
+    path: "/company/notification-template",
+    component: NotificationTemplate,
+  },
   // Constant
   {
     path: "/company/constant/taxes",
@@ -496,6 +524,14 @@ const routesCompany = [
   {
     path: "/company/report/tax-summary",
     component: TaxSummary,
+  },
+  {
+    path: "/company/report/income-summary",
+    component: IncomeSummary,
+  },
+  {
+    path: "/company/report/expense-summary",
+    component: ExpenseSummary,
   },
   {
     path: "/company/banking/account",
