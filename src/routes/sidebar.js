@@ -320,17 +320,17 @@ const routesCompany = [
         name: "Tax Summary",
       },
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/cashflow",
         icon: "",
         name: "Cash Flow",
       },
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/invoice-summary",
         icon: "",
         name: "Invoice Summary",
       },
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/bill-summary",
         icon: "",
         name: "Bill Summary",
       },

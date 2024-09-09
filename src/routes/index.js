@@ -100,7 +100,21 @@ const TaxSummary = lazy(() =>
   import("../pages/protected/company/report/tax-summary/TaxSummary")
 );
 
-const IncomeVsExpense = lazy(() => import("../pages/protected/company/report/income-vs-expense/IncomeVsExpense"));
+const IncomeVsExpense = lazy(() =>
+  import("../pages/protected/company/report/income-vs-expense/IncomeVsExpense")
+);
+
+const Cashflow = lazy(() =>
+  import("../pages/protected/company/report/cashflow/Cashflow")
+);
+
+const InvoiceSummary = lazy(() =>
+  import("../pages/protected/company/report/invoice-summary/InvoiceSummary")
+);
+
+const BillSummary = lazy(() =>
+  import("../pages/protected/company/report/bill-summary/BillSummary")
+);
 
 // END REPORT
 
@@ -518,6 +532,18 @@ const routesCompany = [
   {
     path: "/company/report/income-vs-expense",
     component: IncomeVsExpense,
+  },
+  {
+    path: "/company/report/cashflow",
+    component: Cashflow,
+  },
+  {
+    path: "/company/report/invoice-summary",
+    component: InvoiceSummary,
+  },
+  {
+    path: "/company/report/bill-summary",
+    component: BillSummary,
   },
   {
     path: "/company/report/account-statement",
