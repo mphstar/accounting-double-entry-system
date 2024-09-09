@@ -100,6 +100,8 @@ const TaxSummary = lazy(() =>
   import("../pages/protected/company/report/tax-summary/TaxSummary")
 );
 
+const IncomeVsExpense = lazy(() => import("../pages/protected/company/report/income-vs-expense/IncomeVsExpense"));
+
 // END REPORT
 
 // Banking
@@ -512,6 +514,10 @@ const routesCompany = [
   {
     path: "/company/report/transaction",
     component: Transaction,
+  },
+  {
+    path: "/company/report/income-vs-expense",
+    component: IncomeVsExpense,
   },
   {
     path: "/company/report/account-statement",

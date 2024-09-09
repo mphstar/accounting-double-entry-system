@@ -310,7 +310,7 @@ const routesCompany = [
         name: "Expense Summary",
       },
       {
-        path: "/app/company/staff/proposal",
+        path: "/app/company/report/income-vs-expense",
         icon: "",
         name: "Income VS Expense",
       },
