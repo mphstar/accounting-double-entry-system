@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.required::after {
+  content: "*";
+  color: red;
+  @apply ml-1;
+}
+
 .zindex {
   z-index: 9999 !important;
 }

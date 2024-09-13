@@ -239,6 +239,11 @@ const NotificationTemplate = lazy(() =>
   )
 );
 
+// System Setiing
+const SystemSetting = lazy(() =>
+  import("../pages/protected/company/system-setting/SystemSetting")
+);
+
 // Super Admin
 // Dashboard
 const DashboardSuperAdmin = lazy(() =>
@@ -600,6 +605,10 @@ const routesCompany = [
   {
     path: "/user",
     component: User,
+  },
+  {
+    path: "/company/system-setting",
+    component: SystemSetting,
   },
 ];
 

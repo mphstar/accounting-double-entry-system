@@ -382,7 +382,7 @@ const routesCompany = [
   },
 
   {
-    path: "/app/company/vendor",
+    path: "/app/company/system-setting",
     icon: <IoSettingsOutline className={`${iconClasses} inline`} />,
     name: "System Setting",
   },
