@@ -376,7 +376,7 @@ const routesCompany = [
   },
 
   {
-    path: "/app/company/vendor",
+    path: "/app/company/refferal-program",
     icon: <GoCrossReference className={`${iconClasses} inline`} />,
     name: "Refferal Program",
   },

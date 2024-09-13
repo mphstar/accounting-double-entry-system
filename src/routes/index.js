@@ -118,6 +118,10 @@ const BillSummary = lazy(() =>
 
 // END REPORT
 
+const RefferalProgramCompany = lazy(() =>
+  import("../pages/protected/company/referral-program/RefferalProgram")
+);
+
 // Banking
 
 const Account = lazy(() =>
@@ -485,6 +489,10 @@ const routesCompany = [
   {
     path: "/company/vendor/:id",
     component: DetailVendor,
+  },
+  {
+    path: "/company/refferal-program",
+    component: RefferalProgramCompany,
   },
   {
     path: "/company/plan",
