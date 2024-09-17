@@ -8,6 +8,10 @@ import { BiExport, BiShow } from "react-icons/bi";
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { TbFileExport, TbFileImport } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 
 const Customer = () => {
   const data = [
@@ -93,7 +97,9 @@ const Customer = () => {
             {item.loginIsEnable && (
               <div className="tooltip" data-tip="Forget Password">
                 <button
-                  onClick={() => {}}
+                  onClick={() => {
+                    ModalForgetPassword({ title: "Forget Password" })
+                  }}
                   className="btn btn-square btn-sm bg-green-400 hover:bg-green-500 text-white"
                 >
                   <IoKeyOutline />
@@ -102,7 +108,9 @@ const Customer = () => {
             )}
             <div className="tooltip" data-tip="Edit">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Edit Customer" })
+                }}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
@@ -123,12 +131,69 @@ const Customer = () => {
     ]),
   ];
 
+  const dispatch = useDispatch();
+
+  const ModalImport = ({ title }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_IMPORT_CUSTOMER,
+      })
+    );
+  };
+
+  const ModalForm = ({ title }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_CREATE_CUSTOMER,
+      })
+    );
+  };
+  const ModalForgetPassword = ({ title }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.SUPERADMIN_FORM_RESET_PASSWORD_COMPANY,
+      })
+    );
+  };
+
   return (
     <div className="flex flex-col">
       <HeadPage
         title={"Manage Customer"}
         breadcrumb={"Customer"}
-        actions={<div></div>}
+        actions={
+          <div className="flex gap-2">
+            <div className="tooltip tooltip-bottom" data-tip="Import">
+              <button
+                onClick={() => ModalImport({ title: "Import Customer CSV" })}
+                className="btn btn-square btn-primary btn-sm"
+              >
+                <TbFileImport />
+              </button>
+            </div>
+            <div className="tooltip tooltip-bottom" data-tip="Export">
+              <button
+                onClick={() => {}}
+                className="btn btn-square btn-warning btn-sm"
+              >
+                <TbFileExport />
+              </button>
+            </div>
+            <div className="tooltip tooltip-bottom" data-tip="Add Data">
+              <button
+                onClick={() =>
+                  ModalForm({ title: "Create Customer" })
+                }
+                className="btn btn-square btn-success text-white btn-sm"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        }
       />
 
       <CustomTable column={COLUMN} rows={ROW} />
