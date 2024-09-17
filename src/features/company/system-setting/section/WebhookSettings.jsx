@@ -1,6 +1,7 @@
 import CustomTable from "@/components/TablePage/CustomTable";
 import React from "react";
 import { FiEdit } from "react-icons/fi";
+import { GoPlus } from "react-icons/go";
 import { MdDeleteOutline } from "react-icons/md";
 
 const WebhookSettings = () => {
@@ -78,9 +79,9 @@ const WebhookSettings = () => {
             <h1 className="font-semibold">Web Hook Settings</h1>
             <p className="text-xs"></p>
           </div>
-          {/* <button className="btn btn-sm btn-square btn-success text-white">
+          <button className="btn btn-sm btn-square btn-success text-white">
             <GoPlus />
-          </button> */}
+          </button>
         </div>
         <CustomTable isComponent column={column} rows={row} withoutAction />
       </div>
