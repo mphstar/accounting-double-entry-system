@@ -2,11 +2,10 @@ import React from "react";
 import HeadPage from "@/components/HeadPage/HeadPage";
 import CustomTable from "@/components/TablePage/CustomTable";
 import Paginate from "@/components/Paginate/Paginate";
-import { IoAddOutline, IoSearchOutline } from "react-icons/io5";
-import { GrPowerReset } from "react-icons/gr";
-import { BiExport, BiShow } from "react-icons/bi";
-import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 
 const ProductStock = () => {
   const data = [
@@ -54,6 +53,18 @@ const ProductStock = () => {
     { value: "Action", className: "" },
   ];
 
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_EDIT_PRODUCT_STOCK,
+        extraObject: data,
+      })
+    );
+  };
+
   const ROW = [
     ...data.map((item) => [
       { value: item.name, className: "" },
@@ -63,9 +74,11 @@ const ProductStock = () => {
         title: "Action",
         value: (
           <div className="flex items-center gap-1">
-            <div className="tooltip" data-tip="Edit">
+            <div className="tooltip" data-tip="Edit321">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Edit Product Stock", data: item });
+                }}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />

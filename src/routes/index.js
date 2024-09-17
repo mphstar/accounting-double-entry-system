@@ -147,7 +147,7 @@ const Assets = lazy(() => import("../pages/protected/company/assets/Assets"));
 
 // Product Stock
 const ProductStockCompany = lazy(() =>
-  import("../pages/protected/company/report/product-stock/ProductStock")
+  import("../pages/protected/company/product-stock/ProductStock")
 );
 
 // Customer

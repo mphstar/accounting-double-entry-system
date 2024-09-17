@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setPageTitle } from "@/features/common/headerSlice";
-import ProductStock from "@/features/company/report/product-stock/ProductStock";
+import ProductStock from "@/features/company/product-stock/ProductStock";
 
 function InternalPage() {
   const dispatch = useDispatch();

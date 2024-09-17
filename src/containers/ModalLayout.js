@@ -20,6 +20,7 @@ import ModalAdminHub from "../features/super-admin/company/ModalAdminHub";
 import ModalFormCreatePlan from "../features/super-admin/plan/ModalFormCreatePlan";
 import ModalFormCoupon from "@/features/super-admin/coupon/ModalFormCoupon";
 import ModalDetailOrder from "@/features/super-admin/Order/ModalDetailOrder";
+import FormEditProductStock from "@/features/company/product-stock/FormEditProductStock";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -79,6 +80,14 @@ function ModalLayout() {
               ),
               [MODAL_BODY_TYPES.FORM_CREATE_PRODUCT]: (
                 <FormCreateData extraObject={extraObject} closeModal={close} />
+              ),
+
+              // Product Stock
+              [MODAL_BODY_TYPES.FORM_EDIT_PRODUCT_STOCK]: (
+                <FormEditProductStock
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
               ),
 
               // Constant
