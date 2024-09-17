@@ -23,6 +23,8 @@ import ModalDetailOrder from "@/features/super-admin/Order/ModalDetailOrder";
 import FormEditProductStock from "@/features/company/product-stock/FormEditProductStock";
 import FormImportDataCustomer from "@/features/company/customer/FormImportDataCustomer";
 import FormCreateDataCustomer from "@/features/company/customer/FormCreateDataCustomer";
+import FormImportDataVendor from "@/features/company/vendor/FormImportDataVendor";
+import FormCreateDataVendor from "@/features/company/vendor/FormCreateDataVendor";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -102,6 +104,20 @@ function ModalLayout() {
 
               [MODAL_BODY_TYPES.FORM_CREATE_CUSTOMER]: (
                 <FormCreateDataCustomer
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Vendor
+              [MODAL_BODY_TYPES.FORM_IMPORT_VENDOR]: (
+                <FormImportDataVendor
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+              [MODAL_BODY_TYPES.FORM_CREATE_VENDOR]: (
+                <FormCreateDataVendor
                   extraObject={extraObject}
                   closeModal={close}
                 />

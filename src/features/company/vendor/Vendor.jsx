@@ -9,6 +9,9 @@ import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { TbFileExport, TbFileImport } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 
 const Vendor = () => {
   const data = [
@@ -103,7 +106,9 @@ const Vendor = () => {
             {item.loginIsEnable && (
               <div className="tooltip" data-tip="Forget Password">
                 <button
-                  onClick={() => {}}
+                  onClick={() => {
+                    ModalForgetPassword({ title: "Forget Password" });
+                  }}
                   className="btn btn-square btn-sm bg-green-400 hover:bg-green-500 text-white"
                 >
                   <IoKeyOutline />
@@ -112,7 +117,9 @@ const Vendor = () => {
             )}
             <div className="tooltip" data-tip="Edit">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Edit Vendor" });
+                }}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
@@ -133,6 +140,34 @@ const Vendor = () => {
     ]),
   ];
 
+  const dispatch = useDispatch();
+
+  const ModalImport = ({ title }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_IMPORT_VENDOR,
+      })
+    );
+  };
+
+  const ModalForm = ({ title }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_CREATE_VENDOR,
+      })
+    );
+  };
+  const ModalForgetPassword = ({ title }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.SUPERADMIN_FORM_RESET_PASSWORD_COMPANY,
+      })
+    );
+  };
+
   return (
     <div className="flex flex-col">
       <HeadPage
@@ -140,15 +175,17 @@ const Vendor = () => {
         breadcrumb={"Vendor"}
         actions={
           <div className="flex gap-2 items-center">
-            <div className="tooltip" data-tip="Import">
+            <div className="tooltip tooltip-bottom" data-tip="Import">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalImport({ title: "Import Vendor" });
+                }}
                 className="btn btn-square btn-primary btn-sm"
               >
                 <TbFileImport />
               </button>
             </div>
-            <div className="tooltip" data-tip="Export">
+            <div className="tooltip tooltip-bottom" data-tip="Export">
               <button
                 onClick={() => {}}
                 className="btn btn-square btn-warning btn-sm"
@@ -156,9 +193,11 @@ const Vendor = () => {
                 <TbFileExport />
               </button>
             </div>
-            <div className="tooltip" data-tip="Add Data">
+            <div className="tooltip tooltip-bottom" data-tip="Add Data">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Add Vendor" });
+                }}
                 className="btn btn-square btn-success text-white btn-sm"
               >
                 +
