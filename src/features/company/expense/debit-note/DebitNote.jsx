@@ -11,6 +11,9 @@ import { Link } from "react-router-dom";
 import { TfiReload } from "react-icons/tfi";
 import { FaRegCopy } from "react-icons/fa";
 import FilterCard from "@/components/Cards/FilterCard";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
+import { useDispatch } from "react-redux";
 
 const DebitNote = () => {
   const dataBill = [
@@ -46,9 +49,7 @@ const DebitNote = () => {
       {
         value: (
           <Link to={`/app/company/expense/bill/${btoa(item.bill)}`}>
-            <button className="btn btn-primary btn-outline">
-              {item.bill}
-            </button>
+            <button className="btn btn-primary btn-outline">{item.bill}</button>
           </Link>
         ),
         className: "",
@@ -63,7 +64,9 @@ const DebitNote = () => {
           <div className="flex items-center gap-1">
             <div className="tooltip" data-tip="Edit">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Edit Debit Note", data: item });
+                }}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
@@ -84,6 +87,18 @@ const DebitNote = () => {
     ]),
   ];
 
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_CREATE_DEBIT_NOTE,
+        extraObject: data,
+      })
+    );
+  };
+
   return (
     <div className="flex flex-col">
       <HeadPage
@@ -93,7 +108,9 @@ const DebitNote = () => {
           <div className="flex gap-2 items-center">
             <div className="tooltip" data-tip="Add Data">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Create New Debit Note" });
+                }}
                 className="btn btn-square btn-success text-white btn-sm"
               >
                 +

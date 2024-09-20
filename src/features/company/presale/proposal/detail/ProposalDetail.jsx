@@ -13,8 +13,12 @@ import { FaPlus, FaRegCopy } from "react-icons/fa";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
 import QRCode from "react-qr-code";
 import { IoIosSend } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { showNotification } from "@/features/common/headerSlice";
 
 const ProposalDetail = () => {
+
+  const dispatch = useDispatch()
 
   return (
     <div className="flex flex-col">
@@ -33,8 +37,13 @@ const ProposalDetail = () => {
                 </button>
               </Link>
             </div>
-            <div className="tooltip tooltip-left" data-tip="Copy Invoice">
-              <button className="btn btn-primary btn-sm btn-square">
+            <div className="tooltip tooltip-left" data-tip="Copy Proposal">
+              <button onClick={() => {
+                dispatch(showNotification({
+                  message: "Copy proposal",
+                  status: 1
+                }))
+              }} className="btn btn-primary btn-sm btn-square">
                 <MdContentCopy />
               </button>
             </div>
@@ -45,6 +54,18 @@ const ProposalDetail = () => {
       <Timeline />
 
       <div className="flex flex-row gap-3 flex-wrap mb-6 justify-end">
+        <button onClick={() => {
+          dispatch(showNotification({
+            message: "Resend Proposal",
+            status: 1
+          }))
+        }} className="btn btn-success text-white">Resend Proposal</button>
+        <button onClick={() => {
+          dispatch(showNotification({
+            message: "Download proposal",
+            status: 1
+          }))
+        }} className="btn btn-success text-white">Download</button>
         <select className="select select-bordered" name="" id="">
           <option value="">Draft</option>
           <option value="">Open</option>
@@ -203,15 +224,17 @@ function TimelineItem({ icon, label, status, action }) {
 }
 
 function Timeline() {
+  const dispatch = useDispatch()
+
   const data = [
     {
       icon: <FaPlus size={24} />,
       label: "Create Proposal",
       status: "Created on Feb 18, 2019",
       action: (
-        <button className="btn btn-success btn-sm text-white">
+        <Link to={'/app/company/presale/proposal/create?id=1'} className="btn btn-success btn-sm text-white">
           <FiEdit /> Edit
-        </button>
+        </Link>
       ),
     },
     {
@@ -219,7 +242,9 @@ function Timeline() {
       label: "Send Proposal",
       status: "Status : Not Sent",
       action: (
-        <button className="btn btn-warning btn-sm text-white">
+        <button onClick={() => {
+          dispatch(showNotification({message: "Success sent proposal", status: 1}))
+        }} className="btn btn-warning btn-sm text-white">
           <IoIosSend /> Send
         </button>
       ),

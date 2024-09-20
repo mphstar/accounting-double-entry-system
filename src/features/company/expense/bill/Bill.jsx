@@ -143,12 +143,12 @@ const Bill = () => {
               </button>
             </div>
             <div className="tooltip" data-tip="Edit">
-              <button
-                onClick={() => {}}
+              <Link
+                to={"/app/company/expense/bill/create?id=1"}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
-              </button>
+              </Link>
             </div>
             <div className="tooltip" data-tip="Delete">
               <button
@@ -181,12 +181,12 @@ const Bill = () => {
               </button>
             </div>
             <div className="tooltip" data-tip="Add Data">
-              <button
-                onClick={() => {}}
+              <Link
+                to={"/app/company/expense/bill/create"}
                 className="btn btn-square btn-success text-white btn-sm"
               >
                 +
-              </button>
+              </Link>
             </div>
           </div>
         }

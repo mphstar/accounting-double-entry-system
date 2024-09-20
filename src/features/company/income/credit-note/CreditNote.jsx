@@ -11,6 +11,9 @@ import { Link } from "react-router-dom";
 import { TfiReload } from "react-icons/tfi";
 import { FaRegCopy } from "react-icons/fa";
 import FilterCard from "@/components/Cards/FilterCard";
+import { useDispatch } from "react-redux";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 
 const CreditNote = () => {
   const dataInvoice = [
@@ -63,7 +66,9 @@ const CreditNote = () => {
           <div className="flex items-center gap-1">
             <div className="tooltip" data-tip="Edit">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Edit Credit Note", data: item });
+                }}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
@@ -84,6 +89,18 @@ const CreditNote = () => {
     ]),
   ];
 
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_CREATE_CREDIT_NOTE,
+        extraObject: data,
+      })
+    );
+  };
+
   return (
     <div className="flex flex-col">
       <HeadPage
@@ -93,7 +110,9 @@ const CreditNote = () => {
           <div className="flex gap-2 items-center">
             <div className="tooltip" data-tip="Add Data">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Create Credit Note" });
+                }}
                 className="btn btn-square btn-success text-white btn-sm"
               >
                 +

@@ -25,6 +25,14 @@ import FormImportDataCustomer from "@/features/company/customer/FormImportDataCu
 import FormCreateDataCustomer from "@/features/company/customer/FormCreateDataCustomer";
 import FormImportDataVendor from "@/features/company/vendor/FormImportDataVendor";
 import FormCreateDataVendor from "@/features/company/vendor/FormCreateDataVendor";
+import FormCreateBankingAccount from "@/features/company/banking/account/FormCreateBankingAccount";
+import FormCreateBankingTransfer from "@/features/company/banking/transfer/FormCreateBankingTransfer";
+import FormCreateCreditNoteInvoice from "@/features/company/income/invoice/detail/FormCreateCreditNoteInvoice";
+import FormCreateRevenue from "@/features/company/income/revenue/FormCreateRevenue";
+import FormCreateCreditNote from "@/features/company/income/credit-note/FormCreateCreditNote";
+import FormCreateDebitNoteBill from "@/features/company/expense/bill/detail/FormCreateDebitNoteBill";
+import FormCreatePayment from "@/features/company/expense/payment/FormCreatePayment";
+import FormCreateDebitNote from "@/features/company/expense/debit-note/FormCreateDebitNote";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -118,6 +126,70 @@ function ModalLayout() {
               ),
               [MODAL_BODY_TYPES.FORM_CREATE_VENDOR]: (
                 <FormCreateDataVendor
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Banking Account
+              [MODAL_BODY_TYPES.FORM_CREATE_BANKING_ACCOUNT]: (
+                <FormCreateBankingAccount
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Banking Transfer
+              [MODAL_BODY_TYPES.FORM_CREATE_BANKING_TRANSFER]: (
+                <FormCreateBankingTransfer
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Invoice
+              [MODAL_BODY_TYPES.FORM_CREATE_CREDIT_NOTE_INVOICE]: (
+                <FormCreateCreditNoteInvoice
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Revenue
+              [MODAL_BODY_TYPES.FORM_CREATE_REVENUE]: (
+                <FormCreateRevenue
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Credit Note
+              [MODAL_BODY_TYPES.FORM_CREATE_CREDIT_NOTE]: (
+                <FormCreateCreditNote
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Bill
+              [MODAL_BODY_TYPES.FORM_CREATE_DEBIT_NOTE_BILL]: (
+                <FormCreateDebitNoteBill
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Payment
+              [MODAL_BODY_TYPES.FORM_CREATE_PAYMENT]: (
+                <FormCreatePayment
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Debit Note
+              [MODAL_BODY_TYPES.FORM_CREATE_DEBIT_NOTE]: (
+                <FormCreateDebitNote
                   extraObject={extraObject}
                   closeModal={close}
                 />

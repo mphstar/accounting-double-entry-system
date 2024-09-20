@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { TfiReload } from "react-icons/tfi";
 import { FaRegCopy } from "react-icons/fa";
 import FilterCard from "@/components/Cards/FilterCard";
+import { TbFileExport } from "react-icons/tb";
 
 const Invoice = () => {
   const dataInvoice = [
@@ -168,18 +169,15 @@ const Invoice = () => {
               </button>
             </div>
             <div className="tooltip" data-tip="Edit">
-              <button
-                onClick={() => {}}
+              <Link
+                to={"/app/company/income/invoice/create?id=1"}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
-              </button>
+              </Link>
             </div>
             <div className="tooltip" data-tip="Delete">
-              <button
-                onClick={() => {}}
-                className="btn btn-square btn-sm bg-red-400 hover:bg-red-500 text-white"
-              >
+              <button className="btn btn-square btn-sm bg-red-400 hover:bg-red-500 text-white">
                 <MdDeleteOutline />
               </button>
             </div>
@@ -195,7 +193,26 @@ const Invoice = () => {
       <HeadPage
         title={"Manage Invoice"}
         breadcrumb={"Invoice"}
-        actions={<div></div>}
+        actions={
+          <div className="flex gap-2 items-center">
+            <div className="tooltip" data-tip="Export">
+              <button
+                onClick={() => {}}
+                className="btn btn-square btn-warning btn-sm"
+              >
+                <TbFileExport />
+              </button>
+            </div>
+            <div className="tooltip" data-tip="Add Data">
+              <Link
+                to={"/app/company/income/invoice/create"}
+                className="btn btn-square btn-success text-white btn-sm"
+              >
+                +
+              </Link>
+            </div>
+          </div>
+        }
       />
 
       <FilterCard

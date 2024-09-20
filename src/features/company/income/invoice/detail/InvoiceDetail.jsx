@@ -23,6 +23,10 @@ import FilterCard from "@/components/Cards/FilterCard";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
 import QRCode from "react-qr-code";
 import { TbFileInvoice } from "react-icons/tb";
+import { showNotification } from "@/features/common/headerSlice";
+import { useDispatch } from "react-redux";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 
 const InvoiceDetail = () => {
   const paymentsData = [
@@ -155,7 +159,9 @@ const InvoiceDetail = () => {
 
             <div className="tooltip" data-tip="Edit">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Edit Credit Note", data: item });
+                }}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
@@ -176,6 +182,18 @@ const InvoiceDetail = () => {
     ]),
   ];
 
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_CREATE_CREDIT_NOTE_INVOICE,
+        extraObject: data,
+      })
+    );
+  };
+
   return (
     <div className="flex flex-col">
       <HeadPage
@@ -184,7 +202,14 @@ const InvoiceDetail = () => {
         actions={
           <div className="flex gap-2">
             <div className="tooltip tooltip-left" data-tip="Copy Invoice">
-              <button className="btn btn-primary btn-sm btn-square">
+              <button onClick={() => {
+                dispatch(
+                  showNotification({
+                    message: "Copy invoice",
+                    status: 1,
+                  })
+                );
+              }} className="btn btn-primary btn-sm btn-square">
                 <MdContentCopy />
               </button>
             </div>
@@ -195,16 +220,53 @@ const InvoiceDetail = () => {
       <Timeline />
 
       <div className="flex flex-row gap-3 flex-wrap mb-6 justify-end">
-        <button className="btn btn-primary text-white btn-sm">
+        <button
+          onClick={() => {
+            ModalForm({ title: "Create Credit Note", data: {} });
+          }}
+          className="btn btn-primary text-white btn-sm"
+        >
           Add Credit Note
         </button>
-        <button className="btn btn-primary text-white btn-sm">
+        <button
+          onClick={() => {
+            dispatch(
+              showNotification({
+                message: "Receipt Reminder",
+                status: 1,
+              })
+            );
+          }}
+          className="btn btn-primary text-white btn-sm"
+        >
           Receipt Reminder
         </button>
-        <button className="btn btn-primary text-white btn-sm">
+        <button
+          onClick={() => {
+            dispatch(
+              showNotification({
+                message: "Resend invoice",
+                status: 1,
+              })
+            );
+          }}
+          className="btn btn-primary btn-sm text-white"
+        >
           Resend Invoice
         </button>
-        <button className="btn btn-primary text-white btn-sm">Download</button>
+        <button
+          onClick={() => {
+            dispatch(
+              showNotification({
+                message: "Download invoice",
+                status: 1,
+              })
+            );
+          }}
+          className="btn btn-primary btn-sm text-white"
+        >
+          Download
+        </button>
       </div>
 
       <InvoiceSummary />
@@ -382,9 +444,12 @@ function Timeline() {
       label: "Create Invoice",
       status: "Created on Feb 18, 2019",
       action: (
-        <button className="btn btn-success btn-sm text-white">
+        <Link
+          to={"/app/company/income/invoice/create?id=1"}
+          className="btn btn-success btn-sm text-white"
+        >
           <FiEdit /> Edit
-        </button>
+        </Link>
       ),
     },
     {

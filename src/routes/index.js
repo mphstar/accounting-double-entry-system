@@ -164,6 +164,10 @@ const Proposal = lazy(() =>
   import("../pages/protected/company/presale/proposal/Proposal")
 );
 
+const CreateProposal = lazy(() =>
+  import("../pages/protected/company/presale/proposal/CreateProposal")
+);
+
 const DetailProposal = lazy(() =>
   import("../pages/protected/company/presale/proposal/detail/ProposalDetail")
 );
@@ -173,6 +177,10 @@ const Retainers = lazy(() =>
   import("../pages/protected/company/presale/retainers/Retainers")
 );
 
+const CreateRetainer = lazy(() =>
+  import("../pages/protected/company/presale/retainers/CreateRetainer")
+);
+
 const DetailRetainer = lazy(() =>
   import("../pages/protected/company/presale/retainers/detail/RetainerDetail")
 );
@@ -180,6 +188,10 @@ const DetailRetainer = lazy(() =>
 // Expense
 // Bill
 const Bill = lazy(() => import("../pages/protected/company/expense/bill/Bill"));
+const CreateBill = lazy(() =>
+  import("../pages/protected/company/expense/bill/CreateBill")
+);
+
 const DetailBill = lazy(() =>
   import("../pages/protected/company/expense/bill/detail/BillDetail")
 );
@@ -198,6 +210,9 @@ const DebitNote = lazy(() =>
 // Invoice
 const Invoice = lazy(() =>
   import("../pages/protected/company/income/invoice/Invoice")
+);
+const CreateInvoice = lazy(() =>
+  import("../pages/protected/company/income/invoice/CreateInvoice")
 );
 const DetailInvoice = lazy(() =>
   import("../pages/protected/company/income/invoice/detail/InvoiceDetail")
@@ -441,6 +456,10 @@ const routesCompany = [
     component: Proposal,
   },
   {
+    path: "/company/presale/proposal/create",
+    component: CreateProposal,
+  },
+  {
     path: "/company/presale/proposal/:id",
     component: DetailProposal,
   },
@@ -453,11 +472,21 @@ const routesCompany = [
     path: "/company/presale/retainers",
     component: Retainers,
   },
+  {
+    path: "/company/presale/retainers/create",
+    component: CreateRetainer,
+  },
 
   {
     path: "/company/expense/bill",
     component: Bill,
   },
+  
+  {
+    path: "/company/expense/bill/create",
+    component: CreateBill,
+  },
+
 
   {
     path: "/company/expense/bill/:id",
@@ -474,6 +503,10 @@ const routesCompany = [
   {
     path: "/company/income/invoice",
     component: Invoice,
+  },
+  {
+    path: "/company/income/invoice/create",
+    component: CreateInvoice,
   },
   {
     path: "/company/income/invoice/:id",

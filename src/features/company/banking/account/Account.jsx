@@ -7,6 +7,9 @@ import { GrPowerReset } from "react-icons/gr";
 import { BiExport } from "react-icons/bi";
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
+import { openModal } from "@/features/common/modalSlice";
 
 const Account = () => {
   const data = [
@@ -92,7 +95,12 @@ const Account = () => {
           <div className="flex items-center gap-1">
             <div className="tooltip" data-tip="Edit">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({
+                    title: "Edit Bank Account",
+                    data: item,
+                  });
+                }}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
@@ -110,6 +118,18 @@ const Account = () => {
     ]),
   ];
 
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_CREATE_BANKING_ACCOUNT,
+        extraObject: data,
+      })
+    );
+  };
+
   return (
     <div className="flex flex-col">
       <HeadPage
@@ -119,7 +139,9 @@ const Account = () => {
           <div className="flex gap-2 items-center">
             <div className="tooltip" data-tip="Add">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Add Bank Account" });
+                }}
                 className="btn btn-square btn-success btn-sm"
               >
                 <IoAddOutline />

@@ -12,6 +12,9 @@ import { TfiReload } from "react-icons/tfi";
 import { FaRegCopy } from "react-icons/fa";
 import FilterCard from "@/components/Cards/FilterCard";
 import { TbFileExport } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 
 const Revenue = () => {
   const dataRevenue = [
@@ -104,7 +107,9 @@ const Revenue = () => {
           <div className="flex items-center gap-1">
             <div className="tooltip" data-tip="Edit">
               <button
-                onClick={() => {}}
+                onClick={() => {
+                  ModalForm({ title: "Edit Revenue", data: item });
+                }}
                 className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
               >
                 <FiEdit />
@@ -125,29 +130,47 @@ const Revenue = () => {
     ]),
   ];
 
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.FORM_CREATE_REVENUE,
+        extraObject: data,
+      })
+    );
+  };
+
   return (
     <div className="flex flex-col">
       <HeadPage
         title={"Manage Revenue"}
         breadcrumb={"Revenue"}
-        actions={<div className="flex gap-2 items-center">
-          <div className="tooltip" data-tip="Export">
-            <button
-              onClick={() => {}}
-              className="btn btn-square btn-warning btn-sm"
-            >
-              <TbFileExport />
-            </button>
+        actions={
+          <div className="flex gap-2 items-center">
+            <div className="tooltip" data-tip="Export">
+              <button
+                onClick={() => {}}
+                className="btn btn-square btn-warning btn-sm"
+              >
+                <TbFileExport />
+              </button>
+            </div>
+            <div className="tooltip" data-tip="Add Data">
+              <button
+                onClick={() => {
+                  ModalForm({
+                    title: "Create Revenue",
+                  });
+                }}
+                className="btn btn-square btn-success text-white btn-sm"
+              >
+                +
+              </button>
+            </div>
           </div>
-          <div className="tooltip" data-tip="Add Data">
-            <button
-              onClick={() => {}}
-              className="btn btn-square btn-success text-white btn-sm"
-            >
-              +
-            </button>
-          </div>
-        </div>}
+        }
       />
 
       <FilterCard

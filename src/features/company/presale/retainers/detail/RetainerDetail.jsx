@@ -23,6 +23,8 @@ import FilterCard from "@/components/Cards/FilterCard";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
 import QRCode from "react-qr-code";
 import { TbFileInvoice } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { showNotification } from "@/features/common/headerSlice";
 
 const RetainerDetail = () => {
   const paymentsData = [
@@ -126,6 +128,7 @@ const RetainerDetail = () => {
     ]),
   ];
 
+  const dispatch = useDispatch();
 
   return (
     <div className="flex flex-col">
@@ -134,13 +137,36 @@ const RetainerDetail = () => {
         breadcrumb={"Invoice"}
         actions={
           <div className="flex gap-2">
-            <div className="tooltip tooltip-left" data-tip="Convert into invoice">
-              <button className="btn btn-success text-white btn-sm btn-square">
+            <div
+              className="tooltip tooltip-left"
+              data-tip="Convert into invoice"
+            >
+              <button
+                onClick={() => {
+                  dispatch(
+                    showNotification({
+                      message: "Convert into invoice",
+                      status: 1,
+                    })
+                  );
+                }}
+                className="btn btn-success text-white btn-sm btn-square"
+              >
                 <FiRefreshCw />
               </button>
             </div>
-            <div className="tooltip tooltip-left" data-tip="Copy Invoice">
-              <button className="btn btn-primary btn-sm btn-square">
+            <div className="tooltip tooltip-left" data-tip="Copy Retainer">
+              <button
+                onClick={() => {
+                  dispatch(
+                    showNotification({
+                      message: "Copy Retainer",
+                      status: 1,
+                    })
+                  );
+                }}
+                className="btn btn-primary btn-sm btn-square"
+              >
                 <MdContentCopy />
               </button>
             </div>
@@ -151,10 +177,32 @@ const RetainerDetail = () => {
       <Timeline />
 
       <div className="flex flex-row gap-3 flex-wrap mb-6 justify-end">
-        <button className="btn btn-primary text-white btn-sm">
+        <button
+          onClick={() => {
+            dispatch(
+              showNotification({
+                message: "Resend Retainer",
+                status: 1,
+              })
+            );
+          }}
+          className="btn btn-primary btn-sm text-white"
+        >
           Resend Retainer
         </button>
-        <button className="btn btn-primary text-white btn-sm">Download</button>
+        <button
+          onClick={() => {
+            dispatch(
+              showNotification({
+                message: "Download Retainer",
+                status: 1,
+              })
+            );
+          }}
+          className="btn btn-primary btn-sm text-white"
+        >
+          Download
+        </button>
       </div>
 
       <InvoiceSummary />
@@ -165,7 +213,6 @@ const RetainerDetail = () => {
         column={ColumnReceipt}
         rows={RowReceipt}
       />
-
     </div>
   );
 };
@@ -324,9 +371,12 @@ function Timeline() {
       label: "Create Retainer",
       status: "Created on Feb 18, 2019",
       action: (
-        <button className="btn btn-success btn-sm text-white">
+        <Link
+          to={"/app/company/presale/retainers/create?id=1"}
+          className="btn btn-success btn-sm text-white"
+        >
           <FiEdit /> Edit
-        </button>
+        </Link>
       ),
     },
     {
@@ -339,12 +389,24 @@ function Timeline() {
       label: "Get Paid",
       status: "Status : Awaiting payment",
       action: (
-        <button className="btn btn-primary btn-sm text-white">
+        <button
+          onClick={() => {
+            dispatch(
+              showNotification({
+                message: "Add payment",
+                status: 1,
+              })
+            );
+          }}
+          className="btn btn-primary btn-sm text-white"
+        >
           <HiOutlineCurrencyDollar /> Add Payment
         </button>
       ),
     },
   ];
+
+  const dispatch = useDispatch();
 
   return (
     <ol className="flex flex-col md:flex-row bg-base-100 border-base-300 py-12 px-12 md:px-24 rounded-md mb-4 justify-center items-center border gap-3">
