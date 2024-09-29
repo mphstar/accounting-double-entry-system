@@ -38,7 +38,7 @@ const ROW = [
 
 const SectionAccountBalance = () => {
   return (
-    <div className="flex h-full w-full bg-red-400">
+    <div className="flex h-full w-full">
       <CustomTable title={"Account Balance"} column={COLUMN} rows={ROW} />
     </div>
   );
