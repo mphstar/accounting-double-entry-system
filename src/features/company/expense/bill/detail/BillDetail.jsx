@@ -1,28 +1,18 @@
 import React from "react";
 import HeadPage from "@/components/HeadPage/HeadPage";
 import CustomTable from "@/components/TablePage/CustomTable";
-import Paginate from "@/components/Paginate/Paginate";
 import {
-  IoAddOutline,
-  IoKeyOutline,
   IoMailOutline,
-  IoSearchOutline,
 } from "react-icons/io5";
-import { GrPowerReset } from "react-icons/gr";
-import { BiExport, BiShow } from "react-icons/bi";
 import {
   MdContentCopy,
   MdDeleteOutline,
-  MdOutlineFileDownload,
 } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { TfiReload } from "react-icons/tfi";
-import { FaPlus, FaRegCopy } from "react-icons/fa";
-import FilterCard from "@/components/Cards/FilterCard";
+import { FaPlus } from "react-icons/fa";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
 import QRCode from "react-qr-code";
-import { TbFileInvoice } from "react-icons/tb";
 import { showNotification } from "@/features/common/headerSlice";
 import { useDispatch } from "react-redux";
 import { openModal } from "@/features/common/modalSlice";

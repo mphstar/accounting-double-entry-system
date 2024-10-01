@@ -3,6 +3,7 @@ import HeadPage from "../../../../components/HeadPage/HeadPage";
 import CustomTable from "../../../../components/TablePage/CustomTable";
 import { JOURNALCOLUMN, JOURNALROW } from "./dummyData";
 import Paginate from "../../../../components/Paginate/Paginate";
+import { Link } from "react-router-dom";
 
 const JournalAccount = () => {
   return (
@@ -11,7 +12,9 @@ const JournalAccount = () => {
         title={"Manage Journal Entry"}
         breadcrumb={"Journal Entry"}
         actions={
-          <button className="btn btn-square btn-primary btn-sm">+</button>
+          <Link to={'/app/company/double-entry/journal-account/create'}>
+            <button className="btn btn-square btn-primary btn-sm">+</button>
+          </Link>
         }
       />
 

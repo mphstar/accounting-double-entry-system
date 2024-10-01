@@ -29,6 +29,9 @@ const ChartOfAccount = lazy(() =>
 const JournalAccount = lazy(() =>
   import("../pages/protected/company/double-entry/JournalAccount")
 );
+
+const CreateJournal = lazy(() => import("../pages/protected/company/double-entry/CreateJournalAccount"))
+
 const BalanceSheet = lazy(() =>
   import("../pages/protected/company/double-entry/BalanceSheet")
 );
@@ -430,6 +433,10 @@ const routesCompany = [
   {
     path: "/company/double-entry/journal-account",
     component: JournalAccount,
+  },
+  {
+    path: "/company/double-entry/journal-account/create",
+    component: CreateJournal,
   },
   {
     path: "/company/double-entry/balance-sheet",

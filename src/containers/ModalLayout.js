@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { MODAL_BODY_TYPES } from "../utils/globalConstantUtil";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../features/common/modalSlice";
@@ -33,6 +32,7 @@ import FormCreateCreditNote from "@/features/company/income/credit-note/FormCrea
 import FormCreateDebitNoteBill from "@/features/company/expense/bill/detail/FormCreateDebitNoteBill";
 import FormCreatePayment from "@/features/company/expense/payment/FormCreatePayment";
 import FormCreateDebitNote from "@/features/company/expense/debit-note/FormCreateDebitNote";
+import FormCreateChartOfAccount from "@/features/company/double-entry/chart-of-account/FormCreateChartOfAccount";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -51,7 +51,7 @@ function ModalLayout() {
       {/* Put this part before </body> tag */}
       <div className={`modal ${isOpen ? "modal-open" : ""}`}>
         <div
-          className={`modal-box   ${size == "lg" ? "max-w-5xl w-11/12" : ""}`}
+          className={`modal-box   ${size === "lg" ? "max-w-5xl w-11/12" : ""}`}
         >
           <div className="flex items-center mb-4">
             <h3 className="font-semibold text-base text-start flex-1">
@@ -190,6 +190,14 @@ function ModalLayout() {
               // Debit Note
               [MODAL_BODY_TYPES.FORM_CREATE_DEBIT_NOTE]: (
                 <FormCreateDebitNote
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Chart Of Account
+              [MODAL_BODY_TYPES.FORM_CREATE_CHART_OF_ACCOUNT]: (
+                <FormCreateChartOfAccount
                   extraObject={extraObject}
                   closeModal={close}
                 />

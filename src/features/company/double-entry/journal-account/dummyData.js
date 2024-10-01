@@ -1,6 +1,7 @@
 import { TbTransactionEuro } from "react-icons/tb";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete, MdDeleteOutline } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const JOURNALCOLUMN = [
   { value: "Journal ID", className: "" },
@@ -26,9 +27,11 @@ const JOURNALROW = [
       value: (
         <div className="flex items-center gap-1">
           <div className="tooltip" data-tip="Edit">
-            <button className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white">
-              <FiEdit />
-            </button>
+            <Link to={"/app/company/double-entry/journal-account/create"}>
+              <button className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white">
+                <FiEdit />
+              </button>
+            </Link>
           </div>
           <div className="tooltip" data-tip="Delete">
             <button className="btn btn-square btn-sm bg-red-400 hover:bg-red-500 text-white">
@@ -54,9 +57,11 @@ const JOURNALROW = [
       value: (
         <div className="flex items-center gap-1">
           <div className="tooltip" data-tip="Edit">
-            <button className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white">
-              <FiEdit />
-            </button>
+            <Link to={"/app/company/double-entry/journal-account/create"}>
+              <button className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white">
+                <FiEdit />
+              </button>
+            </Link>
           </div>
           <div className="tooltip" data-tip="Delete">
             <button className="btn btn-square btn-sm bg-red-400 hover:bg-red-500 text-white">
@@ -82,9 +87,11 @@ const JOURNALROW = [
       value: (
         <div className="flex items-center gap-1">
           <div className="tooltip" data-tip="Edit">
-            <button className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white">
-              <FiEdit />
-            </button>
+            <Link to={"/app/company/double-entry/journal-account/create"}>
+              <button className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white">
+                <FiEdit />
+              </button>
+            </Link>
           </div>
           <div className="tooltip" data-tip="Delete">
             <button className="btn btn-square btn-sm bg-red-400 hover:bg-red-500 text-white">
