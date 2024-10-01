@@ -34,6 +34,7 @@ import FormCreatePayment from "@/features/company/expense/payment/FormCreatePaym
 import FormCreateDebitNote from "@/features/company/expense/debit-note/FormCreateDebitNote";
 import FormCreateChartOfAccount from "@/features/company/double-entry/chart-of-account/FormCreateChartOfAccount";
 import FormCreateGoal from "@/features/company/goal/FormCreateGoal";
+import FormCreateAsset from "@/features/company/assets/FormCreateAsset";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -206,6 +207,10 @@ function ModalLayout() {
               // Goal
               [MODAL_BODY_TYPES.FORM_CREATE_GOAL]: (
                 <FormCreateGoal extraObject={extraObject} closeModal={close} />
+              ),
+              // Assets
+              [MODAL_BODY_TYPES.FORM_CREATE_ASSET]: (
+                <FormCreateAsset extraObject={extraObject} closeModal={close} />
               ),
 
               // Constant

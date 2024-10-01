@@ -53,6 +53,8 @@ module.exports = Object.freeze({
 
     // Goal
     FORM_CREATE_GOAL: "FORM_CREATE_GOAL",
+    // Asset
+    FORM_CREATE_ASSET: "FORM_CREATE_ASSET",
 
     // Constant
     FORM_CREATE_CONSTANT_TAXES: "FORM_CREATE_CONSTANT_TAXES",
