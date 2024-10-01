@@ -53,7 +53,7 @@ const ProductStock = () => {
     { value: "Quantity", className: "" },
     { value: "Type", className: "" },
     { value: "Description", className: "" },
-    { value: "Action", className: "" },
+    // { value: "Action", className: "" },
   ];
 
   const ROW = [
@@ -63,23 +63,23 @@ const ProductStock = () => {
       { title: "Quantity", value: item.quantity, className: "" },
       { title: "Type", value: item.type, className: "" },
       { title: "Description", value: item.description, className: "" },
-      {
-        title: "Action",
-        value: (
-          <div className="flex items-center gap-1">
-            <div className="tooltip" data-tip="Edit">
-              <button
-                onClick={() => {}}
-                className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
-              >
-                <FiEdit />
-              </button>
-            </div>
+      // {
+      //   title: "Action",
+      //   value: (
+      //     <div className="flex items-center gap-1">
+      //       <div className="tooltip" data-tip="Edit">
+      //         <button
+      //           onClick={() => {}}
+      //           className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
+      //         >
+      //           <FiEdit />
+      //         </button>
+      //       </div>
             
-          </div>
-        ),
-        className: "",
-      },
+      //     </div>
+      //   ),
+      //   className: "",
+      // },
     ]),
   ];
 
