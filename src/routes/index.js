@@ -330,6 +330,26 @@ const TransactionVendor = lazy(() =>
   import("../pages/protected/vendor/transaction/Transaction")
 );
 
+// LEVEL CUSTOMER
+const ProposalCustomer = lazy(() =>
+  import("../pages/protected/customer/presale/proposal/Proposal")
+);
+
+const ProposalDetailCustomer = lazy(() =>
+  import("../pages/protected/customer/presale/proposal/detail/ProposalDetail")
+);
+
+const routesCustomer = [
+  {
+    path: "/customer/presale/proposal",
+    component: ProposalCustomer,
+  },
+  {
+    path: "/customer/presale/proposal/:id",
+    component: ProposalDetailCustomer,
+  },
+];
+
 const routesVendor = [
   {
     path: "/vendor/bill",
@@ -692,4 +712,4 @@ const routesCompany = [
   },
 ];
 
-export { routesCompany, routesSuperAdmin, routesVendor };
+export { routesCompany, routesSuperAdmin, routesVendor, routesCustomer };
