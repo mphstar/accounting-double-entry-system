@@ -37,7 +37,7 @@ function LeftSidebar() {
           </Link>{" "}
         </li>
 
-        <li className="mb-2 font-semibold text-sm border-b-2 mx-4 pb-3">
+        <li className="mb-2 font-semibold text-sm border-b-2 dark:border-b-gray-700 mx-4 pb-3">
           Super Admin
         </li>
         {routesSuperAdmin.map((route, k) => {
@@ -68,7 +68,7 @@ function LeftSidebar() {
             </li>
           );
         })}
-        <li className="mb-2 font-semibold text-sm border-b-2 mx-4 pb-3 mt-6">
+        <li className="mb-2 font-semibold text-sm border-b-2 dark:border-b-gray-700 mx-4 pb-3 mt-6">
           Company
         </li>
         {routesCompany.map((route, k) => {
@@ -100,7 +100,7 @@ function LeftSidebar() {
           );
         })}
 
-        <li className="mb-2 font-semibold text-sm border-b-2 mx-4 pb-3 mt-6">
+        <li className="mb-2 font-semibold text-sm border-b-2 dark:border-b-gray-700 mx-4 pb-3 mt-6">
           Customer
         </li>
         {routesCustomer.map((route, k) => {
@@ -132,7 +132,7 @@ function LeftSidebar() {
           );
         })}
 
-        <li className="mb-2 font-semibold text-sm border-b-2 mx-4 pb-3 mt-6">
+        <li className="mb-2 font-semibold text-sm border-b-2 dark:border-b-gray-700 mx-4 pb-3 mt-6">
           Vendor
         </li>
         {routesVendor.map((route, k) => {
