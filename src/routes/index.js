@@ -30,7 +30,9 @@ const JournalAccount = lazy(() =>
   import("../pages/protected/company/double-entry/JournalAccount")
 );
 
-const CreateJournal = lazy(() => import("../pages/protected/company/double-entry/CreateJournalAccount"))
+const CreateJournal = lazy(() =>
+  import("../pages/protected/company/double-entry/CreateJournalAccount")
+);
 
 const BalanceSheet = lazy(() =>
   import("../pages/protected/company/double-entry/BalanceSheet")
@@ -309,6 +311,45 @@ const RefferalProgram = lazy(() =>
   import("../pages/protected/super-admin/refferal-program/RefferalProgram")
 );
 
+// LEVEL VENDOR
+
+// Bill
+const BillVendor = lazy(() => import("../pages/protected/vendor/bill/Bill"));
+
+const DetailBillVendor = lazy(() =>
+  import("../pages/protected/vendor/bill/detail/BillDetail")
+);
+
+// Payment
+const PaymentVendor = lazy(() =>
+  import("../pages/protected/vendor/payment/Payment")
+);
+
+// Transaction
+const TransactionVendor = lazy(() =>
+  import("../pages/protected/vendor/transaction/Transaction")
+);
+
+const routesVendor = [
+  {
+    path: "/vendor/bill",
+    component: BillVendor,
+  },
+
+  {
+    path: "/vendor/bill/:id",
+    component: DetailBillVendor,
+  },
+  {
+    path: "/vendor/payment",
+    component: PaymentVendor,
+  },
+  {
+    path: "/vendor/transaction",
+    component: TransactionVendor,
+  },
+];
+
 const routesSuperAdmin = [
   {
     path: "/super-admin/dashboard", // the url
@@ -488,12 +529,11 @@ const routesCompany = [
     path: "/company/expense/bill",
     component: Bill,
   },
-  
+
   {
     path: "/company/expense/bill/create",
     component: CreateBill,
   },
-
 
   {
     path: "/company/expense/bill/:id",
@@ -652,4 +692,4 @@ const routesCompany = [
   },
 ];
 
-export { routesCompany, routesSuperAdmin };
+export { routesCompany, routesSuperAdmin, routesVendor };

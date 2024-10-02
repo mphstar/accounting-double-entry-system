@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { Route, Routes } from "react-router-dom";
-import { routesCompany, routesSuperAdmin } from "../routes";
+import { routesCompany, routesSuperAdmin, routesVendor } from "../routes";
 import { Suspense, lazy } from "react";
 import SuspenseContent from "./SuspenseContent";
 import { useSelector } from "react-redux";
@@ -49,6 +49,18 @@ function PageContent() {
                 />
               );
             })}
+            
+            {routesVendor.map((route, key) => {
+              return (
+                <Route
+                  key={key}
+                  exact={true}
+                  path={`${route.path}`}
+                  element={<route.component />}
+                />
+              );
+            })}
+
 
             {/* Redirecting unknown url to 404 page */}
             <Route path="*" element={<Page404 />} />

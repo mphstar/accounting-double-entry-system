@@ -15,6 +15,7 @@ import { RiBankLine, RiTrophyLine } from "react-icons/ri";
 import { HiOutlineDocumentChartBar } from "react-icons/hi2";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import {
+  MdHistory,
   MdOutlineMailOutline,
   MdOutlinePageview,
   MdWebAsset,
@@ -30,6 +31,74 @@ import { LiaCartPlusSolid } from "react-icons/lia";
 
 const iconClasses = `h-5 w-5 overflow-hidden`;
 const submenuIconClasses = `h-5 w-5`;
+
+const routesCustomer = [
+  {
+    path: "/app/customer/dashboard",
+    icon: <Squares2X2Icon className={`${iconClasses} inline`} />,
+    name: "Dashboard",
+  },
+  {
+    path: "",
+    icon: <RiBankLine className={`${iconClasses} inline`} />,
+    name: "Presale",
+    submenu: [
+      {
+        path: "/app/customer/presale/proposal",
+        icon: "",
+        name: "Proposal",
+      },
+      {
+        path: "/app/customer/presale/retainers",
+        icon: "",
+        name: "Retainers",
+      },
+    ],
+  },
+  {
+    path: "/app/customer/income/invoice",
+    icon: <FaRegMoneyBillAlt className={`${iconClasses} inline`} />,
+    name: "Invoice",
+  },
+  {
+    path: "/app/customer/expense/payment",
+    icon: <IoShareOutline className={`${iconClasses} inline`} />,
+    name: "Payment",
+  },
+  {
+    path: "/app/customer/report/transaction",
+    icon: <MdHistory className={`${iconClasses} inline`} />,
+    name: "Transaction",
+  },
+  {
+    path: "/app/customer/contract",
+    icon: <TbBusinessplan className={`${iconClasses} inline`} />,
+    name: "Contract",
+  },
+];
+
+const routesVendor = [
+  {
+    path: "/app/vendor/dashboard",
+    icon: <Squares2X2Icon className={`${iconClasses} inline`} />,
+    name: "Dashboard",
+  },
+  {
+    path: "/app/vendor/bill",
+    icon: <FaRegMoneyBillAlt className={`${iconClasses} inline`} />,
+    name: "Bill",
+  },
+  {
+    path: "/app/vendor/payment",
+    icon: <IoShareOutline className={`${iconClasses} inline`} />,
+    name: "Payment",
+  },
+  {
+    path: "/app/vendor/transaction",
+    icon: <MdHistory className={`${iconClasses} inline`} />,
+    name: "Transaction",
+  },
+];
 
 const routesSuperAdmin = [
   {
@@ -388,4 +457,4 @@ const routesCompany = [
   },
 ];
 
-export { routesCompany, routesSuperAdmin };
+export { routesCompany, routesSuperAdmin, routesCustomer, routesVendor };
