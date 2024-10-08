@@ -19,7 +19,7 @@ const SectionCashFlow = () => {
   //   menggunakan apexchart
   const option = {
     chart: {
-      type: "line",
+      type: "area",
       toolbar: {
         show: false,
       },
@@ -29,11 +29,7 @@ const SectionCashFlow = () => {
     },
     series: [
       {
-        name: "Income",
-        data: Array.from({ length: 7 }, () => Math.floor(Math.random() * 100)),
-      },
-      {
-        name: "Expense",
+        name: "Order",
         data: Array.from({ length: 7 }, () => Math.floor(Math.random() * 100)),
       },
     ],
@@ -52,12 +48,12 @@ const SectionCashFlow = () => {
 
   return (
     <div className="w-full bg-base-100 h-[700px] flex flex-col drop-shadow rounded-md p-4">
-      <h1>Cashflow</h1>
+      <h1>Recent Order</h1>
       <div className="flex w-full h-full pb-6  flex-col">
         <ReactApexChart
           options={option}
           series={option.series}
-          type="line"
+          type="area"
           height={"100%"}
           width={"100%"}
         />
