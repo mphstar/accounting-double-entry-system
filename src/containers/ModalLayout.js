@@ -36,6 +36,8 @@ import FormCreateChartOfAccount from "@/features/company/double-entry/chart-of-a
 import FormCreateGoal from "@/features/company/goal/FormCreateGoal";
 import FormCreateAsset from "@/features/company/assets/FormCreateAsset";
 import FormCreateMenuBar from "@/features/super-admin/landing-page/section/FormCreateMenuBar";
+import FormCreateFeaturesList from "@/features/super-admin/landing-page/section/FormCreateFeaturesList";
+import FormCreateFeaturesBlockList from "@/features/super-admin/landing-page/section/FormCreateFeaturesBlockList";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -293,6 +295,20 @@ function ModalLayout() {
               // Menu Bar
               [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_MENU_BAR]: (
                 <FormCreateMenuBar
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+              // Features List
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_FEATURES_LIST]: (
+                <FormCreateFeaturesList
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+              // Features Block List
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_FEATURES_BLOCK_LIST]: (
+                <FormCreateFeaturesBlockList
                   extraObject={extraObject}
                   closeModal={close}
                 />

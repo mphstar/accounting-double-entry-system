@@ -1,8 +1,11 @@
 import CustomTable from "@/components/TablePage/CustomTable";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 import React from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 import { MdOutlineDeleteOutline } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 const Features = () => {
   const dataFeaturesList = [
@@ -48,7 +51,16 @@ const Features = () => {
       {
         value: (
           <div className="flex gap-2">
-            <button className="btn btn-square bg-blue-500 hover:bg-blue-600 btn-sm text-white">
+            <button
+              onClick={() =>
+                ModalForm({
+                  title: "Edit Feature",
+                  data: item,
+                  modal: MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_FEATURES_LIST,
+                })
+              }
+              className="btn btn-square bg-blue-500 hover:bg-blue-600 btn-sm text-white"
+            >
               <FaRegEdit />
             </button>
             <button className="btn btn-square bg-red-500 hover:bg-red-600 btn-sm text-white">
@@ -108,7 +120,17 @@ const Features = () => {
       {
         value: (
           <div className="flex gap-2">
-            <button className="btn btn-square bg-blue-500 hover:bg-blue-600 btn-sm text-white">
+            <button
+              onClick={() =>
+                ModalForm({
+                  title: "Edit Feature",
+                  data: item,
+                  modal:
+                    MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_FEATURES_BLOCK_LIST,
+                })
+              }
+              className="btn btn-square bg-blue-500 hover:bg-blue-600 btn-sm text-white"
+            >
               <FaRegEdit />
             </button>
             <button className="btn btn-square bg-red-500 hover:bg-red-600 btn-sm text-white">
@@ -120,6 +142,18 @@ const Features = () => {
       },
     ]),
   ];
+
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data, modal }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: modal,
+        extraObject: data,
+      })
+    );
+  };
 
   return (
     <section id="features">
@@ -139,7 +173,7 @@ const Features = () => {
             <input
               type="text"
               className="input input-bordered"
-              value={"Features"}
+              defaultValue={"Features"}
             />
           </label>
           <label className="form-control gap-2">
@@ -147,7 +181,7 @@ const Features = () => {
             <input
               type="text"
               className="input input-bordered"
-              value={"All In One Place CRM System"}
+              defaultValue={"All In One Place CRM System"}
             />
           </label>
           <label className="form-control gap-2">
@@ -155,7 +189,7 @@ const Features = () => {
             <input
               type="text"
               className="input input-bordered"
-              value={
+              defaultValue={
                 "Use these awesome forms to login or create new account in your project for free. Use these awesome forms to login or create new account in your project for free."
               }
             />
@@ -165,7 +199,7 @@ const Features = () => {
             <input
               type="text"
               className="input input-bordered"
-              value={
+              defaultValue={
                 "https://codecanyon.net/item/accountgo-saas-accounting-and-billing-tool/25733019"
               }
             />
@@ -179,7 +213,15 @@ const Features = () => {
       <div className="flex flex-col bg-base-100 p-5 rounded-md mt-4 drop-shadow">
         <div className="flex gap-2 justify-between items-center mb-4">
           <h1 className="font-semibold">Features List</h1>
-          <button className="btn btn-sm btn-square btn-success text-white">
+          <button
+            onClick={() =>
+              ModalForm({
+                title: "Create Features",
+                modal: MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_FEATURES_LIST,
+              })
+            }
+            className="btn btn-sm btn-square btn-success text-white"
+          >
             <GoPlus />
           </button>
         </div>
@@ -207,7 +249,7 @@ const Features = () => {
             <input
               type="text"
               className="input input-bordered"
-              value={"AccountGo SaaS Accounting and Billing Tool"}
+              defaultValue={"AccountGo SaaS Accounting and Billing Tool"}
             />
           </label>
           <label className="form-control gap-2">
@@ -215,7 +257,7 @@ const Features = () => {
             <input
               type="text"
               className="input input-bordered"
-              value={
+              defaultValue={
                 "Use these awesome forms to login or create new account in your project for free."
               }
             />
@@ -245,7 +287,16 @@ const Features = () => {
       <div className="flex flex-col bg-base-100 p-5 rounded-md mt-4 drop-shadow">
         <div className="flex gap-2 justify-between items-center mb-4">
           <h1 className="font-semibold">Features Block List</h1>
-          <button className="btn btn-sm btn-square btn-success text-white">
+          <button
+            onClick={() =>
+              ModalForm({
+                title: "Create Features Block",
+                modal:
+                  MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_FEATURES_BLOCK_LIST,
+              })
+            }
+            className="btn btn-sm btn-square btn-success text-white"
+          >
             <GoPlus />
           </button>
         </div>

@@ -109,7 +109,7 @@ const CustomPage = () => {
                 type="text"
                 name=""
                 className="input input-bordered"
-                value={
+                defaultValue={
                   "We build modern web tools to help you jump-start your daily business work."
                 }
                 id=""
