@@ -1,8 +1,11 @@
 import CustomTable from "@/components/TablePage/CustomTable";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 import React, { useState } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 import { MdOutlineDeleteOutline } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 const CustomPage = () => {
   const data = [
@@ -48,7 +51,10 @@ const CustomPage = () => {
       {
         value: (
           <div className="flex gap-2">
-            <button className="btn btn-square bg-blue-500 hover:bg-blue-600 btn-sm text-white">
+            <button
+              onClick={() => ModalForm({ title: "Edit Menu Bar" })}
+              className="btn btn-square bg-blue-500 hover:bg-blue-600 btn-sm text-white"
+            >
               <FaRegEdit />
             </button>
             <button className="btn btn-square bg-red-500 hover:bg-red-600 btn-sm text-white">
@@ -60,6 +66,18 @@ const CustomPage = () => {
       },
     ]),
   ];
+
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_MENU_BAR,
+        extraObject: data,
+      })
+    );
+  };
 
   return (
     <section id="custom-page">
@@ -107,7 +125,10 @@ const CustomPage = () => {
       <div className="flex flex-col bg-base-100 p-5 rounded-md mt-4 drop-shadow">
         <div className="flex gap-2 justify-between items-center mb-4">
           <h1 className="font-semibold">Menu Bar</h1>
-          <button className="btn btn-sm btn-square btn-success text-white">
+          <button
+            onClick={() => ModalForm({ title: "Create Menu Bar" })}
+            className="btn btn-sm btn-square btn-success text-white"
+          >
             <GoPlus />
           </button>
         </div>

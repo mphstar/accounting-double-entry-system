@@ -35,6 +35,7 @@ import FormCreateDebitNote from "@/features/company/expense/debit-note/FormCreat
 import FormCreateChartOfAccount from "@/features/company/double-entry/chart-of-account/FormCreateChartOfAccount";
 import FormCreateGoal from "@/features/company/goal/FormCreateGoal";
 import FormCreateAsset from "@/features/company/assets/FormCreateAsset";
+import FormCreateMenuBar from "@/features/super-admin/landing-page/section/FormCreateMenuBar";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -284,6 +285,14 @@ function ModalLayout() {
               // ORDER
               [MODAL_BODY_TYPES.SUPERADMIN_ORDER_DETAIL]: (
                 <ModalDetailOrder
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Menu Bar
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_MENU_BAR]: (
+                <FormCreateMenuBar
                   extraObject={extraObject}
                   closeModal={close}
                 />
