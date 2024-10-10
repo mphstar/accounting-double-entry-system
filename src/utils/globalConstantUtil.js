@@ -7,6 +7,8 @@ module.exports = Object.freeze({
 
     // Staff
     FORM_STAFF_USER: "FORM_STAFF_USER",
+    FORM_DETAIL_LOG_USER: "FORM_DETAIL_LOG_USER",
+
     FORM_STAFF_ROLE: "FORM_STAFF_ROLE",
 
     // Product & Services

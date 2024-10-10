@@ -50,6 +50,10 @@ const StaffUser = lazy(() =>
   import("../pages/protected/company/staff/StaffUser")
 );
 
+const UserLog = lazy(() =>
+  import("../pages/protected/company/staff/logs/UserLog")
+);
+
 const StaffRole = lazy(() =>
   import("../pages/protected/company/staff/StaffRole")
 );
@@ -485,6 +489,10 @@ const routesCompany = [
   {
     path: "/company/staff/user",
     component: StaffUser,
+  },
+  {
+    path: "/company/staff/user/logs",
+    component: UserLog,
   },
 
   {

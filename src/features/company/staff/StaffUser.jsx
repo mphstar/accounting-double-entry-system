@@ -8,6 +8,7 @@ import { RiDeleteBin7Line } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { MODAL_BODY_TYPES } from "../../../utils/globalConstantUtil";
 import { openModal } from "../../common/modalSlice";
+import { Link } from "react-router-dom";
 
 const DATA = [
   {
@@ -72,9 +73,11 @@ const StaffUser = () => {
             >
               <IoAddOutline />
             </button>
-            <button className="btn btn-square btn-primary btn-sm">
-              <FiUserCheck />
-            </button>
+            <Link to={"/app/company/staff/user/logs"}>
+              <button className="btn btn-square btn-primary btn-sm">
+                <FiUserCheck />
+              </button>
+            </Link>
           </div>
         }
       />

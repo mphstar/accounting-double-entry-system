@@ -38,6 +38,7 @@ import FormCreateAsset from "@/features/company/assets/FormCreateAsset";
 import FormCreateMenuBar from "@/features/super-admin/landing-page/section/FormCreateMenuBar";
 import FormCreateFeaturesList from "@/features/super-admin/landing-page/section/FormCreateFeaturesList";
 import FormCreateFeaturesBlockList from "@/features/super-admin/landing-page/section/FormCreateFeaturesBlockList";
+import FormDetailLogUser from "@/features/company/staff/logs/FormDetailLogUser";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -87,6 +88,14 @@ function ModalLayout() {
               [MODAL_BODY_TYPES.FORM_STAFF_USER]: (
                 <FormModalUser extraObject={extraObject} closeModal={close} />
               ),
+
+              [MODAL_BODY_TYPES.FORM_DETAIL_LOG_USER]: (
+                <FormDetailLogUser
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
               [MODAL_BODY_TYPES.FORM_STAFF_ROLE]: (
                 <FormModalRole extraObject={extraObject} closeModal={close} />
               ),
