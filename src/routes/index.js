@@ -255,6 +255,9 @@ const OrderCompany = lazy(() =>
 const Contract = lazy(() =>
   import("../pages/protected/company/contract/Contract")
 );
+const DetailContract = lazy(() =>
+  import("../pages/protected/company/contract/detail/DetailContract")
+);
 
 // Notification Template
 const NotificationTemplate = lazy(() =>
@@ -626,6 +629,10 @@ const routesCompany = [
   {
     path: "/company/contract",
     component: Contract,
+  },
+  {
+    path: "/company/contract/:id",
+    component: DetailContract,
   },
   {
     path: "/company/notification-template",

@@ -39,6 +39,7 @@ import FormCreateMenuBar from "@/features/super-admin/landing-page/section/FormC
 import FormCreateFeaturesList from "@/features/super-admin/landing-page/section/FormCreateFeaturesList";
 import FormCreateFeaturesBlockList from "@/features/super-admin/landing-page/section/FormCreateFeaturesBlockList";
 import FormDetailLogUser from "@/features/company/staff/logs/FormDetailLogUser";
+import FormModalSignature from "@/features/company/contract/detail/section/FormModalSignature";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -91,6 +92,14 @@ function ModalLayout() {
 
               [MODAL_BODY_TYPES.FORM_DETAIL_LOG_USER]: (
                 <FormDetailLogUser
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // ContraCt
+              [MODAL_BODY_TYPES.FORM_MODAL_SIGNATURE]: (
+                <FormModalSignature
                   extraObject={extraObject}
                   closeModal={close}
                 />

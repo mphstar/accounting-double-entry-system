@@ -101,7 +101,7 @@ const Contract = () => {
     ...data.map((item) => [
       {
         value: (
-          <Link to={`/app/company/income/invoice/${btoa(item.id)}`}>
+          <Link to={`/app/company/contract/${btoa(item.id)}`}>
             <button className="btn btn-primary btn-outline">{item.id}</button>
           </Link>
         ),

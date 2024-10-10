@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-base-100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .required::after {
   content: "*";
   color: red;
@@ -13,33 +34,46 @@
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-container {
-  background-color: #191E24 !important;
+  background-color: #191e24 !important;
   color: #fff !important;
-  border-color: #191E24 !important;
+  border-color: #191e24 !important;
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-toolbar {
-  background-color: #191E24 !important;
+  background-color: #191e24 !important;
   color: #fff !important;
-  border-color: #191E24 !important;
+  border-color: #191e24 !important;
+  @apply outline-gray-600;
+}
+
+[data-theme="dark"] .sun-editor-dark-mode .se-toolbar .se-btn-module-border {
+  @apply outline-gray-600 border-gray-600;
+}
+
+[data-theme="dark"] .sun-editor-dark-mode .se-resizing-bar {
+  outline: 1px solid #4b5563 !important;
+  @apply bg-base-100 border-none;
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-toolbar button {
-  background-color: #191E24 !important;
+  background-color: #191e24 !important;
   color: #fff !important;
-  border-color: #191E24 !important;
+  border-color: #191e24 !important;
+  @apply outline-gray-600;
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-wrapper,
 [data-theme="dark"] .sun-editor-dark-mode .se-wrapper-inner {
-  background-color: #191E24 !important;
+  background-color: var(
+    --fallback-b1,
+    oklch(var(--b1) / var(--tw-bg-opacity))
+  ) !important;
   color: #fff !important;
-  border-color: #191E24 !important;
+  border-color: #191e24 !important;
+  outline: 1px solid #4b5563 !important;
 }
 
 [data-theme="dark"] .sun-editor-dark-mode .se-wrapper .se-placeholder::after {
-  color: #191E24 !important;
-  border-color: #191E24 !important;
 }
 
 @layer components {
