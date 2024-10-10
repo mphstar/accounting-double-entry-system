@@ -18,8 +18,8 @@ const SystemSetting = () => {
   return (
     <div className="flex flex-col">
       <HeadPage
-        title={"Refferal Program"}
-        breadcrumb={"Refferal Program"}
+        title={"Settings"}
+        breadcrumb={"Settings"}
         actions={<div className="flex gap-2"></div>}
       />
 

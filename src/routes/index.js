@@ -311,6 +311,10 @@ const RefferalProgram = lazy(() =>
   import("../pages/protected/super-admin/refferal-program/RefferalProgram")
 );
 
+const SystemSettingSuperAdmin = lazy(() =>
+  import("../pages/protected/super-admin/system-setting/SystemSetting")
+);
+
 // LEVEL VENDOR
 
 // Bill
@@ -410,6 +414,10 @@ const routesSuperAdmin = [
   {
     path: "/super-admin/refferal-program",
     component: RefferalProgram,
+  },
+  {
+    path: "/super-admin/system-setting",
+    component: SystemSettingSuperAdmin,
   },
 ];
 

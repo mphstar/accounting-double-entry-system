@@ -148,7 +148,7 @@ const routesSuperAdmin = [
   },
 
   {
-    path: "/app/super-admin/setting",
+    path: "/app/super-admin/system-setting",
     icon: <IoSettingsOutline className={`${iconClasses} inline`} />,
     name: "System Setting",
   },
