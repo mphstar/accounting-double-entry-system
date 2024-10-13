@@ -1,8 +1,6 @@
 import HeadPage from "@/components/HeadPage/HeadPage";
 import React from "react";
 import TemplatePage from "./TemplatePage";
-import Payout from "./section/Payout";
-import RefferalTransaction from "./section/RefferalTransaction";
 import General from "./section/General";
 import { IoMailOutline } from "react-icons/io5";
 import { GoCopy, GoDownload } from "react-icons/go";
@@ -11,6 +9,8 @@ import { TfiPencil } from "react-icons/tfi";
 import { useDispatch } from "react-redux";
 import { openModal } from "@/features/common/modalSlice";
 import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
+import Attachment from "./section/Attachment";
+import Comment from "./section/Comment";
 
 const DetailContract = () => {
   const dispatch = useDispatch();
@@ -83,8 +83,8 @@ const DetailContract = () => {
       <TemplatePage>
         <div className="flex flex-col w-full gap-3">
           <General />
-          <RefferalTransaction />
-          <Payout />
+          <Attachment />
+          <Comment />
         </div>
       </TemplatePage>
     </div>
