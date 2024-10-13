@@ -2,11 +2,11 @@ import React from "react";
 import HeadPage from "@/components/HeadPage/HeadPage";
 import CustomTable from "@/components/TablePage/CustomTable";
 import Paginate from "@/components/Paginate/Paginate";
-import { IoAddOutline, IoSearchOutline } from "react-icons/io5";
-import { GrPowerReset } from "react-icons/gr";
-import { BiExport, BiShow } from "react-icons/bi";
-import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md";
+import { IoAddOutline } from "react-icons/io5";
+import {  BiShow } from "react-icons/bi";
+import { MdDeleteOutline } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const BudgetPlanner = () => {
   const data = [
@@ -57,12 +57,14 @@ const BudgetPlanner = () => {
               </button>
             </div>
             <div className="tooltip" data-tip="Edit">
-              <button
-                onClick={() => {}}
-                className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
-              >
-                <FiEdit />
-              </button>
+              <Link to="/app/company/budget-planner/create">
+                <button
+                  onClick={() => {}}
+                  className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
+                >
+                  <FiEdit />
+                </button>
+              </Link>
             </div>
             <div className="tooltip" data-tip="Delete">
               <button className="btn btn-square btn-sm bg-red-400 hover:bg-red-500 text-white">
@@ -84,12 +86,14 @@ const BudgetPlanner = () => {
         actions={
           <div className="flex gap-2 items-center">
             <div className="tooltip" data-tip="Add">
-              <button
-                onClick={() => {}}
-                className="btn btn-square btn-success btn-sm"
-              >
-                <IoAddOutline />
-              </button>
+              <Link to="/app/company/budget-planner/create">
+                <button
+                  onClick={() => {}}
+                  className="btn btn-square btn-success btn-sm"
+                >
+                  <IoAddOutline />
+                </button>
+              </Link>
             </div>
           </div>
         }

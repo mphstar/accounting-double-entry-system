@@ -148,6 +148,10 @@ const BudgetPlanner = lazy(() =>
   import("../pages/protected/company/budget-planner/BudgetPlanner")
 );
 
+const CreateBudgetPlanner = lazy(() =>
+  import("../pages/protected/company/budget-planner/CreateBudgetPlanner")
+);
+
 // Goal
 const Goal = lazy(() => import("../pages/protected/company/goal/Goal"));
 
@@ -713,6 +717,11 @@ const routesCompany = [
     path: "/company/budget-planner",
     component: BudgetPlanner,
   },
+  {
+    path: "/company/budget-planner/create",
+    component: CreateBudgetPlanner,
+  },
+
   {
     path: "/company/goal",
     component: Goal,
