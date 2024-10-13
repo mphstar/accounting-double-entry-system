@@ -11,6 +11,7 @@ import { openModal } from "@/features/common/modalSlice";
 import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 import Attachment from "./section/Attachment";
 import Comment from "./section/Comment";
+import Notes from "./section/Notes";
 
 const DetailContract = () => {
   const dispatch = useDispatch();
@@ -85,6 +86,7 @@ const DetailContract = () => {
           <General />
           <Attachment />
           <Comment />
+          <Notes />
         </div>
       </TemplatePage>
     </div>
