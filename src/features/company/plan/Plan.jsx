@@ -124,17 +124,7 @@ const CardPlan = ({ data }) => {
               <p>Plan Expired : Sep 4, 2025</p>
             ) : (
               <>
-                <button
-                  onClick={() => {
-                    dispatch(
-                      openModal({
-                        bodyType: MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_PLAN,
-                        title: "Edit Plan",
-                      })
-                    );
-                  }}
-                  className="btn bg-green-500 hover:bg-green-600 text-white"
-                >
+                <button className="btn bg-green-500 hover:bg-green-600 text-white">
                   Buy Plan
                 </button>
                 {data.name !== "Free Plan" && (
