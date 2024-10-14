@@ -56,7 +56,7 @@ const routesCustomer = [
     ],
   },
   {
-    path: "/app/customer/income/invoice",
+    path: "/app/customer/invoice",
     icon: <FaRegMoneyBillAlt className={`${iconClasses} inline`} />,
     name: "Invoice",
   },
