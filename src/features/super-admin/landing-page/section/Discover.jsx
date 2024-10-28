@@ -1,8 +1,11 @@
 import CustomTable from "@/components/TablePage/CustomTable";
+import { openModal } from "@/features/common/modalSlice";
+import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 import React from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 import { MdOutlineDeleteOutline } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 const Discover = () => {
   const dataDiscoverList = [
@@ -48,7 +51,16 @@ const Discover = () => {
       {
         value: (
           <div className="flex gap-2">
-            <button className="btn btn-square bg-blue-500 hover:bg-blue-600 btn-sm text-white">
+            <button
+              onClick={() => {
+                ModalForm({
+                  title: "Edit Discover List",
+                  data: item,
+                  modal: MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_DISCOVER_LIST,
+                });
+              }}
+              className="btn btn-square bg-blue-500 hover:bg-blue-600 btn-sm text-white"
+            >
               <FaRegEdit />
             </button>
             <button className="btn btn-square bg-red-500 hover:bg-red-600 btn-sm text-white">
@@ -60,6 +72,18 @@ const Discover = () => {
       },
     ]),
   ];
+
+  const dispatch = useDispatch();
+
+  const ModalForm = ({ title, data, modal }) => {
+    dispatch(
+      openModal({
+        title: title,
+        bodyType: modal,
+        extraObject: data,
+      })
+    );
+  };
 
   return (
     <section id="discover">
@@ -119,7 +143,16 @@ const Discover = () => {
       <div className="flex flex-col bg-base-100 p-5 rounded-md mt-4 drop-shadow">
         <div className="flex gap-2 justify-between items-center mb-4">
           <h1 className="font-semibold">Discover List</h1>
-          <button className="btn btn-sm btn-square btn-success text-white">
+          <button
+            onClick={() => {
+              ModalForm({
+                title: "Create Discover List",
+                data: {},
+                modal: MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_DISCOVER_LIST,
+              });
+            }}
+            className="btn btn-sm btn-square btn-success text-white"
+          >
             <GoPlus />
           </button>
         </div>

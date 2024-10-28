@@ -40,6 +40,11 @@ import FormCreateFeaturesList from "@/features/super-admin/landing-page/section/
 import FormCreateFeaturesBlockList from "@/features/super-admin/landing-page/section/FormCreateFeaturesBlockList";
 import FormDetailLogUser from "@/features/company/staff/logs/FormDetailLogUser";
 import FormModalSignature from "@/features/company/contract/detail/section/FormModalSignature";
+import FormCreateDiscoverList from "@/features/super-admin/landing-page/section/FormCreateDiscoverList";
+import FormCreateScreenshotList from "@/features/super-admin/landing-page/section/FormCreateScreenshotList";
+import FormCreateFaq from "@/features/super-admin/landing-page/section/FormCreateFaq";
+import FormCreateTestimoniList from "@/features/super-admin/landing-page/section/FormCreateTestimoniList";
+import FormCreateJoinUsList from "@/features/super-admin/landing-page/section/FormCreateJoinUsList";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -327,6 +332,43 @@ function ModalLayout() {
               // Features Block List
               [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_FEATURES_BLOCK_LIST]: (
                 <FormCreateFeaturesBlockList
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Discover List
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_DISCOVER_LIST]: (
+                <FormCreateDiscoverList
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Screenshot List
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_SCREENSHOT_LIST]: (
+                <FormCreateScreenshotList
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Faq List
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_FAQ_LIST]: (
+                <FormCreateFaq extraObject={extraObject} closeModal={close} />
+              ),
+
+              // Testimoni List
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_TESTIMONI_LIST]: (
+                <FormCreateTestimoniList
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // Join US List
+              [MODAL_BODY_TYPES.SUPERADMIN_FORM_CREATE_JOIN_US_LIST]: (
+                <FormCreateJoinUsList
                   extraObject={extraObject}
                   closeModal={close}
                 />

@@ -100,7 +100,7 @@ const CardPlan = ({ data }) => {
   return (
     <div className="p-3 relative pt-6">
       <div className="w-full absolute top-0 z-[5] flex justify-center">
-        <div className="bg-green-500 text-white p-3 rounded-md w-fit text-xs">
+        <div className="bg-primary text-white p-3 rounded-md w-fit text-xs">
           <h1>{data.name}</h1>
         </div>
       </div>
@@ -137,7 +137,7 @@ const CardPlan = ({ data }) => {
                 })
               );
             }}
-            className="btn bg-green-500 hover:bg-green-600 text-white"
+            className="btn bg-primary hover:bg-primary/90 text-white"
           >
             <FiEdit />
           </button>
