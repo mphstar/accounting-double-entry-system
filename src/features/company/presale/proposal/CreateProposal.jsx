@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import HeadPage from "@/components/HeadPage/HeadPage";
 import Select from "react-select";
 import { MdDeleteOutline } from "react-icons/md";
@@ -14,6 +14,54 @@ const CreateProposal = () => {
   );
 
   const [totalItem, setTotalItem] = useState(1);
+
+  const [items, setItems] = useState([
+    {
+      name: "Bycicle",
+      quantity: 0,
+      qty: "",
+      discount: "",
+      description: "",
+      tax: [],
+      price: 0,
+    },
+  ]);
+
+  const result = useMemo(() => {
+    let subTotal = items.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
+
+    let discount = 0;
+
+    let tax = 0;
+    items.forEach((item) => {
+      discount += parseInt(item.discount) || 0;
+      item.tax.forEach((taxItem) => {
+        tax += (taxItem.value / 100) * item.price;
+      });
+    });
+
+    let total = subTotal - discount + tax;
+
+    // format number
+    const formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+
+    subTotal = formatter.format(subTotal);
+    discount = formatter.format(discount);
+    tax = formatter.format(tax);
+    total = formatter.format(total);
+
+    return {
+      subTotal,
+      discount,
+      tax,
+      total,
+    };
+  }, [items]);
 
   return (
     <div className="flex flex-col">
@@ -99,7 +147,20 @@ const CreateProposal = () => {
         <div className="flex gap-2 items-center mb-4">
           <h1 className="font-semibold w-full">Product & Service</h1>
           <button
-            onClick={() => setTotalItem(totalItem + 1)}
+            onClick={() => {
+              setItems([
+                ...items,
+                {
+                  name: "Bycicle",
+                  quantity: 0,
+                  qty: "",
+                  discount: "",
+                  description: "",
+                  tax: [],
+                  price: 0,
+                },
+              ]);
+            }}
             className="btn btn-success text-white btn-sm"
           >
             + Add Item
@@ -125,11 +186,17 @@ const CreateProposal = () => {
                 <th></th>
               </tr>
             </thead>
-            {Array.from({ length: totalItem }).map((_, i) => (
+
+            {items.map((item, i) => (
               <CardTable
-                handleDelete={() => setTotalItem(totalItem - 1)}
+                handleDelete={() =>
+                  setItems(items.filter((_, index) => i !== index))
+                }
                 hasDelete={i != 0}
                 key={i}
+                index={i}
+                data={items}
+                setItems={setItems}
               />
             ))}
             <tbody>
@@ -137,25 +204,25 @@ const CreateProposal = () => {
                 <td className="text-end font-bold" colSpan={5}>
                   Sub Total ($)
                 </td>
-                <td className="text-end">152.00</td>
+                <td className="text-end">{result.subTotal.toString()}</td>
               </tr>
               <tr>
                 <td className="text-end font-bold" colSpan={5}>
                   Discount ($)
                 </td>
-                <td className="text-end">0</td>
+                <td className="text-end">{result.discount.toString()}</td>
               </tr>
               <tr>
                 <td className="text-end font-bold" colSpan={5}>
                   Tax ($)
                 </td>
-                <td className="text-end">23.25</td>
+                <td className="text-end">{result.tax.toString()}</td>
               </tr>
               <tr>
                 <td className="text-end font-bold" colSpan={5}>
                   Total Amount ($)
                 </td>
-                <td className="text-end">173.25</td>
+                <td className="text-end">{result.total.toString()}</td>
               </tr>
             </tbody>
           </table>
@@ -171,41 +238,75 @@ const CreateProposal = () => {
   );
 };
 
-const CardTable = ({ hasDelete = false, handleDelete = () => {} }) => {
-  const [item, setItem] = useState({
-    qty: "",
-    price: "",
-    tax: [],
-  });
+const CardTable = ({
+  hasDelete = false,
+  handleDelete = () => {},
+  data = [],
+  index,
+  setItems = () => {},
+}) => {
+  const item = data[index];
 
   const items = [
     {
       name: "Bycicle",
+      quantity: 1,
       qty: "Inch",
       description: "Giving information on its origins.",
-      tax: ["CGST (10%)", "SGST (5.5%)"],
-      price: "$200.0",
+
+      tax: [
+        {
+          name: "CGST (10%)",
+          value: 10,
+        },
+        {
+          name: "SGST (10%)",
+          value: 10,
+        },
+      ],
+      price: 200,
     },
     {
       name: "Helmet",
+      quantity: 1,
       qty: "Unit",
       description: "Protective gear for cycling.",
-      tax: ["CGST (10%)"],
-      price: "$200.0",
+
+      tax: [
+        {
+          name: "CGST (10%)",
+          value: 10,
+        },
+      ],
+      price: 150,
     },
     {
       name: "Lock",
+      quantity: 1,
       qty: "Unit",
       description: "Security device for bicycles.",
-      tax: ["CGST (10%)"],
-      price: "$200.0",
+
+      tax: [
+        {
+          name: "CGST (10%)",
+          value: 10,
+        },
+      ],
+      price: 200,
     },
     {
       name: "Gloves",
+      quantity: 1,
       qty: "Pair",
       description: "Cycling gloves for comfort and grip.",
-      tax: ["CGST (10%)"],
-      price: "$200.0",
+
+      tax: [
+        {
+          name: "CGST (10%)",
+          value: 10,
+        },
+      ],
+      price: 180,
     },
   ];
 
@@ -223,13 +324,24 @@ const CardTable = ({ hasDelete = false, handleDelete = () => {} }) => {
           <div className="w-[200px]">
             <Select
               onChange={(e) => {
-                const filterData = items.filter((item) => {
-                  return item.name === e.value;
-                });
+                const filtered = items.find((item) => item.name === e.value);
 
-                setItem(...filterData);
+                setItems(
+                  data.map((item, i) => {
+                    if (i === index) {
+                      return {
+                        ...item,
+                        ...filtered,
+                      };
+                    }
+
+                    return item;
+                  })
+                );
               }}
               className="my-react-select-container"
+              // value={{ value: item.name, label: item.name }}
+              placeholder="Select Item"
               classNamePrefix="my-react-select"
               options={itemOption}
             />
@@ -239,8 +351,23 @@ const CardTable = ({ hasDelete = false, handleDelete = () => {} }) => {
           <div className="join items-center w-[130px] input input-bordered">
             <input
               className=" join-item w-full"
-              placeholder="qty"
-              type="text"
+              placeholder="quantity"
+              type="number"
+              onChange={(e) => {
+                setItems(
+                  data.map((item, i) => {
+                    if (i === index) {
+                      return {
+                        ...item,
+                        quantity: e.target.value,
+                      };
+                    }
+
+                    return item;
+                  })
+                );
+              }}
+              value={item.quantity}
               name=""
               id=""
             />
@@ -252,11 +379,24 @@ const CardTable = ({ hasDelete = false, handleDelete = () => {} }) => {
             <input
               className=" join-item w-full"
               placeholder="price"
-              type="text"
+              type="number"
               value={item.price}
               name=""
               id=""
-              onChange={(e) => {}}
+              onChange={(e) => {
+                setItems(
+                  data.map((item, i) => {
+                    if (i === index) {
+                      return {
+                        ...item,
+                        price: e.target.value,
+                      };
+                    }
+
+                    return item;
+                  })
+                );
+              }}
             />
             <p className="px-2 font-bold">$</p>
           </div>
@@ -264,10 +404,25 @@ const CardTable = ({ hasDelete = false, handleDelete = () => {} }) => {
         <td>
           <div className="join items-center w-[130px] input input-bordered">
             <input
-              className=" join-item w-full"
+              className="join-item w-full"
               placeholder="discount"
-              type="text"
-              name=""
+              type="number"
+              name="discount"
+              value={item.discount ?? ""}
+              onChange={(e) => {
+                setItems(
+                  data.map((item, i) => {
+                    if (i === index) {
+                      return {
+                        ...item,
+                        discount: e.target.value,
+                      };
+                    }
+
+                    return item;
+                  })
+                );
+              }}
               id=""
             />
             <p className="px-2 font-bold">$</p>
@@ -275,9 +430,12 @@ const CardTable = ({ hasDelete = false, handleDelete = () => {} }) => {
         </td>
         <td>
           <div className="flex flex-wrap gap-2">
-            {item.tax.map((item) => (
-              <div className="text-xs bg-green-500 p-2 text-white rounded flex-nowrap whitespace-nowrap">
-                {item}
+            {item.tax.map((item, i) => (
+              <div
+                key={i}
+                className="text-xs bg-green-500 p-2 text-white rounded flex-nowrap whitespace-nowrap"
+              >
+                {item.name}
               </div>
             ))}
           </div>
