@@ -7,6 +7,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import FilterCard from "../../../../components/Cards/FilterCard";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
+import { FaDollarSign } from "react-icons/fa";
 
 const LedgerSummary = () => {
   return (
@@ -71,9 +72,44 @@ const LedgerSummary = () => {
         }
       />
 
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <Card
+          title="Total Credit"
+          value={"$245.00"}
+          bgColor="bg-green-500"
+          textColor="text-green-500"
+        />
+        <Card
+          title="Total Debit"
+          value={"$100.00"}
+          bgColor="bg-blue-500"
+          textColor="text-blue-500"
+        />
+        <Card
+          title="Total Balance"
+          value={"$345.00"}
+          bgColor="bg-orange-500"
+          textColor="text-orange-500"
+        />
+      </div>
+
       <CustomTable column={LEDGERCOLUMN} rows={LEDGERROW} />
 
       <Paginate showData={LEDGERROW.length} totalData={LEDGERROW.length} />
+    </div>
+  );
+};
+
+const Card = ({ title, value, bgColor, textColor }) => {
+  return (
+    <div className="flex flex-row items-center gap-2 bg-base-100 p-4 rounded-md drop-shadow">
+      <div className="flex flex-col flex-1">
+        <h1 className="font-medium">{title}</h1>
+        <p className={`font-medium text-xl mt-4 ${textColor}`}>{value}</p>
+      </div>
+      <div className={`p-2 rounded-full ${bgColor} text-white`}>
+        <FaDollarSign />
+      </div>
     </div>
   );
 };
