@@ -355,6 +355,11 @@ const TransactionVendor = lazy(() =>
 );
 
 // LEVEL CUSTOMER
+
+const DashboardCustomer = lazy(() =>
+  import("../pages/protected/customer/dashboard/DashboardCustomer")
+);
+
 const ProposalCustomer = lazy(() =>
   import("../pages/protected/customer/presale/proposal/Proposal")
 );
@@ -374,6 +379,10 @@ const DetailInvoiceCustomer = lazy(() =>
 );
 
 const routesCustomer = [
+  {
+    path: "/customer/dashboard", // the url
+    component: DashboardCustomer, //
+  },
   {
     path: "/customer/presale/proposal",
     component: ProposalCustomer,
