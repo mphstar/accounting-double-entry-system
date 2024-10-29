@@ -254,6 +254,11 @@ const DetailVendor = lazy(() =>
 // Plan
 const PlanCompany = lazy(() => import("../pages/protected/company/plan/Plan"));
 
+// Order Plan
+const OrderPlan = lazy(() =>
+  import("../pages/protected/company/plan/order/OrderPlan")
+);
+
 // Order
 const OrderCompany = lazy(() =>
   import("../pages/protected/company/order/Order")
@@ -651,6 +656,10 @@ const routesCompany = [
   {
     path: "/company/plan",
     component: PlanCompany,
+  },
+  {
+    path: "/company/plan/order",
+    component: OrderPlan,
   },
   {
     path: "/company/order",
