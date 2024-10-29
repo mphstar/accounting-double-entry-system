@@ -45,6 +45,7 @@ import FormCreateScreenshotList from "@/features/super-admin/landing-page/sectio
 import FormCreateFaq from "@/features/super-admin/landing-page/section/FormCreateFaq";
 import FormCreateTestimoniList from "@/features/super-admin/landing-page/section/FormCreateTestimoniList";
 import FormCreateJoinUsList from "@/features/super-admin/landing-page/section/FormCreateJoinUsList";
+import FormCreateContract from "@/features/company/contract/FormCreateContract";
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -267,6 +268,14 @@ function ModalLayout() {
 
               [MODAL_BODY_TYPES.FORM_CREATE_CONSTANT_CONTRACT_TYPE]: (
                 <ModalConstantContract
+                  extraObject={extraObject}
+                  closeModal={close}
+                />
+              ),
+
+              // CONTRACT
+              [MODAL_BODY_TYPES.FORM_CREATE_CONTRACT]: (
+                <FormCreateContract
                   extraObject={extraObject}
                   closeModal={close}
                 />

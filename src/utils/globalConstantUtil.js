@@ -35,6 +35,9 @@ module.exports = Object.freeze({
     // Banking Transfer
     FORM_CREATE_BANKING_TRANSFER: "FORM_CREATE_BANKING_TRANSFER",
 
+    // Contract
+    FORM_CREATE_CONTRACT: "FORM_CREATE_CONTRACT",
+
     // Invoice
     FORM_CREATE_CREDIT_NOTE_INVOICE: "FORM_CREATE_CREDIT_NOTE_INVOICE",
 
