@@ -61,12 +61,12 @@ const routesCustomer = [
     name: "Invoice",
   },
   {
-    path: "/app/customer/expense/payment",
+    path: "/app/customer/payment",
     icon: <IoShareOutline className={`${iconClasses} inline`} />,
     name: "Payment",
   },
   {
-    path: "/app/customer/report/transaction",
+    path: "/app/customer/transaction",
     icon: <MdHistory className={`${iconClasses} inline`} />,
     name: "Transaction",
   },
