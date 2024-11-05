@@ -97,6 +97,23 @@ const Plan = () => {
 
 const CardPlan = ({ data }) => {
   const dispatch = useDispatch();
+  const ColorCard = () => {
+    if (data.name === "Free Plan") {
+      return "bg-blue-300";
+    }
+    if (data.name === "Silver") {
+      return "bg-gray-400";
+    }
+    if (data.name === "Gold") {
+      return "bg-yellow-500";
+    }
+    if (data.name === "Platinum") {
+      return "bg-[#B1C5C7]";
+    }
+
+    return "bg-base-100";
+  };
+
   return (
     <div className="p-3 relative pt-6">
       <div className="w-full absolute top-0 z-[5] flex justify-center">
@@ -104,14 +121,21 @@ const CardPlan = ({ data }) => {
           <h1>{data.name}</h1>
         </div>
       </div>
-      <div className="bg-base-100 drop-shadow p-5 relative rounded-md flex flex-col items-center">
+      <div
+        className={`${ColorCard()} h-full drop-shadow p-5 relative rounded-md flex flex-col items-center`}
+      >
+        <div className="bg-base-100 w-full h-[75%] absolute bottom-0 rounded-t-full -z-[2]"></div>
+
         {data.name != "Free Plan" && (
-          <input
-            type="checkbox"
-            className="toggle toggle-primary top-4 right-4 absolute"
-          />
+          <label className="flex gap-2 items-center w-fit top-4 right-4 absolute">
+            <p className="font-semibold">Is Active</p>
+            <input
+              type="checkbox"
+              className="toggle toggle-primary toggle-sm"
+            />
+          </label>
         )}
-        <div className="flex items-end mb-4 mt-4">
+        <div className="flex items-end mb-6 pb-8 mt-4">
           <h1 className="text-4xl font-semibold">{data.price}</h1>
           <span className="text-xs">/{data.duration}</span>
         </div>
