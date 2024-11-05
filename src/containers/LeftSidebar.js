@@ -19,6 +19,8 @@ function LeftSidebar() {
     document.getElementById("left-sidebar-drawer").click();
   };
 
+  const level = localStorage.getItem("level");
+
   return (
     <div className="drawer-side z-30  ">
       <label htmlFor="left-sidebar-drawer" className="drawer-overlay"></label>
@@ -37,132 +39,126 @@ function LeftSidebar() {
           </Link>{" "}
         </li>
 
-        <li className="mb-2 font-semibold text-sm border-b-2 dark:border-b-gray-700 mx-4 pb-3">
-          Super Admin
-        </li>
-        {routesSuperAdmin.map((route, k) => {
-          return (
-            <li className="" key={k}>
-              {route.submenu ? (
-                <SidebarSubmenu {...route} />
-              ) : (
-                <NavLink
-                  end
-                  to={route.path}
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? "font-semibold  bg-base-200 " : "font-normal"
-                    } flex flex-row items-center gap-0`
-                  }
-                >
-                  <div className="pr-3">{route.icon}</div>
-                  <span className="">{route.name}</span>
-                  {location.pathname === route.path ? (
-                    <span
-                      className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
-                      aria-hidden="true"
-                    ></span>
-                  ) : null}
-                </NavLink>
-              )}
-            </li>
-          );
-        })}
-        <li className="mb-2 font-semibold text-sm border-b-2 dark:border-b-gray-700 mx-4 pb-3 mt-6">
-          Company
-        </li>
-        {routesCompany.map((route, k) => {
-          return (
-            <li className="" key={k}>
-              {route.submenu ? (
-                <SidebarSubmenu {...route} />
-              ) : (
-                <NavLink
-                  end
-                  to={route.path}
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? "font-semibold  bg-base-200 " : "font-normal"
-                    } flex flex-row items-center gap-0`
-                  }
-                >
-                  <div className="pr-3">{route.icon}</div>
-                  <span className="">{route.name}</span>
-                  {location.pathname === route.path ? (
-                    <span
-                      className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
-                      aria-hidden="true"
-                    ></span>
-                  ) : null}
-                </NavLink>
-              )}
-            </li>
-          );
-        })}
 
-        <li className="mb-2 font-semibold text-sm border-b-2 dark:border-b-gray-700 mx-4 pb-3 mt-6">
-          Customer
-        </li>
-        {routesCustomer.map((route, k) => {
-          return (
-            <li className="" key={k}>
-              {route.submenu ? (
-                <SidebarSubmenu {...route} />
-              ) : (
-                <NavLink
-                  end
-                  to={route.path}
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? "font-semibold  bg-base-200 " : "font-normal"
-                    } flex flex-row items-center gap-0`
-                  }
-                >
-                  <div className="pr-3">{route.icon}</div>
-                  <span className="">{route.name}</span>
-                  {location.pathname === route.path ? (
-                    <span
-                      className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
-                      aria-hidden="true"
-                    ></span>
-                  ) : null}
-                </NavLink>
-              )}
-            </li>
-          );
-        })}
+        {level === "superadmin" &&
+          routesSuperAdmin.map((route, k) => {
+            return (
+              <li className="" key={k}>
+                {route.submenu ? (
+                  <SidebarSubmenu {...route} />
+                ) : (
+                  <NavLink
+                    end
+                    to={route.path}
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? "font-semibold  bg-base-200 " : "font-normal"
+                      } flex flex-row items-center gap-0`
+                    }
+                  >
+                    <div className="pr-3">{route.icon}</div>
+                    <span className="">{route.name}</span>
+                    {location.pathname === route.path ? (
+                      <span
+                        className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
+                        aria-hidden="true"
+                      ></span>
+                    ) : null}
+                  </NavLink>
+                )}
+              </li>
+            );
+          })}
 
-        <li className="mb-2 font-semibold text-sm border-b-2 dark:border-b-gray-700 mx-4 pb-3 mt-6">
-          Vendor
-        </li>
-        {routesVendor.map((route, k) => {
-          return (
-            <li className="" key={k}>
-              {route.submenu ? (
-                <SidebarSubmenu {...route} />
-              ) : (
-                <NavLink
-                  end
-                  to={route.path}
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? "font-semibold  bg-base-200 " : "font-normal"
-                    } flex flex-row items-center gap-0`
-                  }
-                >
-                  <div className="pr-3">{route.icon}</div>
-                  <span className="">{route.name}</span>
-                  {location.pathname === route.path ? (
-                    <span
-                      className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
-                      aria-hidden="true"
-                    ></span>
-                  ) : null}
-                </NavLink>
-              )}
-            </li>
-          );
-        })}
+        {level === "company" &&
+          routesCompany.map((route, k) => {
+            return (
+              <li className="" key={k}>
+                {route.submenu ? (
+                  <SidebarSubmenu {...route} />
+                ) : (
+                  <NavLink
+                    end
+                    to={route.path}
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? "font-semibold  bg-base-200 " : "font-normal"
+                      } flex flex-row items-center gap-0`
+                    }
+                  >
+                    <div className="pr-3">{route.icon}</div>
+                    <span className="">{route.name}</span>
+                    {location.pathname === route.path ? (
+                      <span
+                        className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
+                        aria-hidden="true"
+                      ></span>
+                    ) : null}
+                  </NavLink>
+                )}
+              </li>
+            );
+          })}
+
+        {level === "customer" &&
+          routesCustomer.map((route, k) => {
+            return (
+              <li className="" key={k}>
+                {route.submenu ? (
+                  <SidebarSubmenu {...route} />
+                ) : (
+                  <NavLink
+                    end
+                    to={route.path}
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? "font-semibold  bg-base-200 " : "font-normal"
+                      } flex flex-row items-center gap-0`
+                    }
+                  >
+                    <div className="pr-3">{route.icon}</div>
+                    <span className="">{route.name}</span>
+                    {location.pathname === route.path ? (
+                      <span
+                        className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
+                        aria-hidden="true"
+                      ></span>
+                    ) : null}
+                  </NavLink>
+                )}
+              </li>
+            );
+          })}
+
+        {level === "vendor" &&
+          routesVendor.map((route, k) => {
+            return (
+              <li className="" key={k}>
+                {route.submenu ? (
+                  <SidebarSubmenu {...route} />
+                ) : (
+                  <NavLink
+                    end
+                    to={route.path}
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? "font-semibold  bg-base-200 " : "font-normal"
+                      } flex flex-row items-center gap-0`
+                    }
+                  >
+                    <div className="pr-3">{route.icon}</div>
+                    <span className="">{route.name}</span>
+                    {location.pathname === route.path ? (
+                      <span
+                        className="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary "
+                        aria-hidden="true"
+                      ></span>
+                    ) : null}
+                  </NavLink>
+                )}
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
