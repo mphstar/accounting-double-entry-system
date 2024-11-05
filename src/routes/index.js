@@ -446,6 +446,10 @@ const routesCustomer = [
 
 const routesVendor = [
   {
+    path: "/vendor/dashboard", // the url
+    component: DashboardCustomer, //
+  },
+  {
     path: "/vendor/bill",
     component: BillVendor,
   },
