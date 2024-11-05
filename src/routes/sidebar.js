@@ -119,7 +119,7 @@ const routesSuperAdmin = [
   {
     path: "/app/super-admin/plan-request",
     icon: <LuGitPullRequestDraft className={`${iconClasses} inline`} />,
-    name: "Plan Request",
+    name: "Feature Request",
   },
   {
     path: "/app/super-admin/coupon",

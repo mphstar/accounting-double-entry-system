@@ -368,6 +368,14 @@ const ProposalDetailCustomer = lazy(() =>
   import("../pages/protected/customer/presale/proposal/detail/ProposalDetail")
 );
 
+const RetainerCustomer = lazy(() =>
+  import("../pages/protected/customer/presale/retainers/Retainers")
+);
+
+const DetailRetainerCustomer = lazy(() =>
+  import("../pages/protected/customer/presale/retainers/detail/RetainerDetail")
+);
+
 const InvoiceCustomer = lazy(() =>
   import("../pages/protected/customer/invoice/Invoice")
 );
@@ -390,6 +398,14 @@ const routesCustomer = [
   {
     path: "/customer/presale/proposal/:id",
     component: ProposalDetailCustomer,
+  },
+  {
+    path: "/customer/presale/retainers",
+    component: RetainerCustomer,
+  },
+  {
+    path: "/customer/presale/retainers/:id",
+    component: DetailRetainerCustomer,
   },
   {
     path: "/customer/invoice",

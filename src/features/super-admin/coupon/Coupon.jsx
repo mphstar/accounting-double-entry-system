@@ -15,14 +15,16 @@ const Coupon = () => {
     {
       name: "FreeCoupon",
       code: "A8BJL4SPYG",
-      discount: 100,
+      type: "Nominal",
+      discount: "$100",
       limit: 10,
       used: 3,
     },
     {
       name: "DiscountCoupon",
       code: "A8BJL4SPYG",
-      discount: 50,
+      type: "Nominal",
+      discount: "50%",
       limit: 10,
       used: 3,
     },
@@ -31,7 +33,8 @@ const Coupon = () => {
   const column = [
     { value: "Name", className: "" },
     { value: "Code", className: "" },
-    { value: "Discount (%)", className: "" },
+    { value: "Type", className: "" },
+    { value: "Amount", className: "" },
     { value: "Limit", className: "" },
     { value: "Used", className: "" },
     { value: "Action", className: "" },
@@ -41,6 +44,7 @@ const Coupon = () => {
     ...data.map((item, index) => [
       { value: item.name, className: "" },
       { value: item.code, className: "" },
+      { value: item.type, className: "" },
       { value: item.discount, className: "" },
       { value: item.limit, className: "" },
       { value: item.used, className: "" },

@@ -13,6 +13,15 @@ const ModalFormCoupon = ({ extraObject, closeModal }) => {
           </div>
           <input type="text" className="input input-bordered w-full" />
         </label>
+        <label className="form-control w-full col-span-2">
+          <div className="label">
+            <span className="label-text font-semibold">Type</span>
+          </div>
+          <select className="select select-bordered w-full" name="" id="">
+            <option value="nominal">Nominal</option>
+            <option value="percentage">Percentage</option>
+          </select>
+        </label>
         <label className="form-control w-full">
           <div className="label">
             <span className="label-text font-semibold">Discount</span>

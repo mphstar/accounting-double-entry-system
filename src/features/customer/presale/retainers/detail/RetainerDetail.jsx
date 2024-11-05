@@ -85,7 +85,6 @@ const RetainerDetail = () => {
     { value: "Description", className: "" },
     { value: "Receipt", className: "" },
     { value: "Order ID", className: "" },
-    { value: "Action", className: "" },
   ];
 
   const RowReceipt = [
@@ -109,22 +108,7 @@ const RetainerDetail = () => {
         className: "",
       },
       { value: item.OrderId, className: "" },
-      {
-        title: "Action",
-        value: (
-          <div className="flex items-center gap-1">
-            <div className="tooltip" data-tip="Delete">
-              <button
-                onClick={() => {}}
-                className="btn btn-square btn-sm bg-red-400 hover:bg-red-500 text-white"
-              >
-                <MdDeleteOutline />
-              </button>
-            </div>
-          </div>
-        ),
-        className: "",
-      },
+      
     ]),
   ];
 
@@ -137,24 +121,6 @@ const RetainerDetail = () => {
         breadcrumb={"Invoice"}
         actions={
           <div className="flex gap-2">
-            <div
-              className="tooltip tooltip-left"
-              data-tip="Convert into invoice"
-            >
-              <button
-                onClick={() => {
-                  dispatch(
-                    showNotification({
-                      message: "Convert into invoice",
-                      status: 1,
-                    })
-                  );
-                }}
-                className="btn btn-success text-white btn-sm btn-square"
-              >
-                <FiRefreshCw />
-              </button>
-            </div>
             <div className="tooltip tooltip-left" data-tip="Copy Retainer">
               <button
                 onClick={() => {
@@ -174,21 +140,20 @@ const RetainerDetail = () => {
         }
       />
 
-      <Timeline />
 
       <div className="flex flex-row gap-3 flex-wrap mb-6 justify-end">
         <button
           onClick={() => {
             dispatch(
               showNotification({
-                message: "Resend Retainer",
+                message: "Send Mail",
                 status: 1,
               })
             );
           }}
           className="btn btn-primary btn-sm text-white"
         >
-          Resend Retainer
+          Send Mail
         </button>
         <button
           onClick={() => {

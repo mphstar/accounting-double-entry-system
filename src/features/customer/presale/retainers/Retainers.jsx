@@ -74,7 +74,6 @@ const Retainers = () => {
     { value: "Category", className: "" },
     { value: "Issue Date", className: "" },
     { value: "Status", className: "" },
-    { value: "Action", className: "" },
   ];
 
   const cekStatus = (status) => {
@@ -122,7 +121,7 @@ const Retainers = () => {
       {
         value: (
           <Link
-            to={`/app/company/presale/retainers/${btoa(item.retainer)}`}
+            to={`/app/customer/presale/retainers/${btoa(item.retainer)}`}
             className="link"
           >
             <button className="btn btn-primary btn-outline">
@@ -136,38 +135,7 @@ const Retainers = () => {
       { value: item.category, className: "" },
       { value: item.issueDate, className: "" },
       { value: cekStatus(item.status), className: "" },
-      {
-        title: "Action",
-        value: (
-          <div className="flex items-center gap-1">
-            <div className="tooltip" data-tip="Duplicate">
-              <button
-                onClick={() => {}}
-                className="btn btn-square btn-sm bg-slate-600 hover:bg-slate-700 text-white"
-              >
-                <FaRegCopy />
-              </button>
-            </div>
-            <div className="tooltip" data-tip="Edit">
-            <Link
-                to={"/app/company/presale/retainers/create?id=1"}
-                className="btn btn-square btn-sm bg-blue-400 hover:bg-blue-500 text-white"
-              >
-                <FiEdit />
-              </Link>
-            </div>
-            <div className="tooltip" data-tip="Delete">
-              <button
-                onClick={() => {}}
-                className="btn btn-square btn-sm bg-red-400 hover:bg-red-500 text-white"
-              >
-                <MdDeleteOutline />
-              </button>
-            </div>
-          </div>
-        ),
-        className: "",
-      },
+      
     ]),
   ];
 
@@ -193,14 +161,7 @@ const Retainers = () => {
                 <TbFileExport />
               </button>
             </div>
-            <div className="tooltip" data-tip="Add Data">
-              <Link
-                to={"/app/company/presale/retainers/create"}
-                className="btn btn-square btn-success text-white btn-sm"
-              >
-                +
-              </Link>
-            </div>
+            
           </div>
         }
       />
@@ -209,22 +170,7 @@ const Retainers = () => {
         noTitle
         actions={
           <div className="flex flex-row w-full gap-3 items-end flex-wrap xl:flex-nowrap">
-            <label className="form-control w-fit md:w-full">
-              <span className="label-text">Customer</span>
-              <select className="select select-bordered" name="" id="">
-                <option value="">Select Customer</option>
-                <option value="">Kaire</option>
-                <option value="">Protiong</option>
-              </select>
-            </label>
-            <label className="form-control w-fit md:w-full">
-              <span className="label-text">Category</span>
-              <select className="select select-bordered" name="" id="">
-                <option value="">Select Category</option>
-                <option value="">Insurance</option>
-                <option value="">Inventory</option>
-              </select>
-            </label>
+            
             <label className="form-control w-fit md:w-full">
               <span className="label-text">Start Date</span>
               <input
