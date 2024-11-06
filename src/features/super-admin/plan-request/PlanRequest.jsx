@@ -58,7 +58,7 @@ const PlanRequest = () => {
 
   return (
     <div className="flex flex-col">
-      <HeadPage title={"Plan Request"} breadcrumb={"Plan Request"} />
+      <HeadPage title={"Feature Request"} breadcrumb={"Feature Request"} />
       <CustomTable column={column} rows={ROW} />
       <Paginate showData={ROW.length} totalData={ROW.length} />
     </div>
