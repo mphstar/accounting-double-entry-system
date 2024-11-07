@@ -26,10 +26,16 @@ const FormModalSignature = ({ extraObject, closeModal }) => {
             Cancel
           </button>
           <button
-            onClick={() => closeModal()}
+            onClick={() => {
+              const url = signature.current.getTrimmedCanvas().toDataURL();
+              const link = document.createElement("a");
+              link.href = url;
+              link.download = "signature.png";
+              link.click();
+            }}
             className="btn btn-success text-white"
           >
-            Sign
+            Download
           </button>
         </div>
       </div>

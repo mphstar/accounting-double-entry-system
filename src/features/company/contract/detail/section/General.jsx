@@ -198,7 +198,10 @@ const General = () => {
           </div>
         </label>
         <div className="flex justify-end w-full mt-6">
-          <button className="btn btn-success text-white w-fit">
+          <button onClick={() => {
+            console.log(richTextEditorHtml);
+            
+          }} className="btn btn-success text-white w-fit">
             Save Changes
           </button>
         </div>

@@ -12,6 +12,7 @@ import { MODAL_BODY_TYPES } from "@/utils/globalConstantUtil";
 import Attachment from "./section/Attachment";
 import Comment from "./section/Comment";
 import Notes from "./section/Notes";
+import { Link } from "react-router-dom";
 
 const DetailContract = () => {
   const dispatch = useDispatch();
@@ -58,12 +59,11 @@ const DetailContract = () => {
               </button>
             </div>
             <div className="tooltip" data-tip="Preview">
-              <button
-                onClick={() => {}}
-                className="btn btn-square btn-success text-white btn-sm"
-              >
-                <MdOutlineRemoveRedEye />
-              </button>
+              <Link to={"/app/company/contract/preview/Dw12DWdq213"}>
+                <button className="btn btn-square btn-success text-white btn-sm">
+                  <MdOutlineRemoveRedEye />
+                </button>
+              </Link>
             </div>
             <div className="tooltip" data-tip="Signature">
               <button
