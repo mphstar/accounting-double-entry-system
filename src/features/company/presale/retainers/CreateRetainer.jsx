@@ -20,7 +20,11 @@ const CreateRetainer = () => {
       name: "Bycicle",
       quantity: 0,
       qty: "",
-      discount: "",
+      discount: {
+        code: "",
+        amount: 0,
+        type: "",
+      },
       description: "",
       tax: [],
       price: 0,
@@ -36,7 +40,11 @@ const CreateRetainer = () => {
 
     let tax = 0;
     items.forEach((item) => {
-      discount += parseInt(item.discount) || 0;
+      if (item.discount.type === "percentage") {
+        discount += (item.discount.amount / 100) * item.price;
+      } else {
+        discount += parseInt(item.discount.amount) || 0;
+      }
       item.tax.forEach((taxItem) => {
         tax += (taxItem.value / 100) * item.price;
       });
@@ -154,7 +162,11 @@ const CreateRetainer = () => {
                   name: "Bycicle",
                   quantity: 0,
                   qty: "",
-                  discount: "",
+                  discount: {
+                    code: "",
+                    amount: 0,
+                    type: "",
+                  },
                   description: "",
                   tax: [],
                   price: 0,
@@ -173,7 +185,7 @@ const CreateRetainer = () => {
                 <th className="">Items</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>Discount</th>
+                <th>Coupon</th>
                 <th>Tax (%)</th>
                 <th>
                   <div className="flex flex-col justify-end">
@@ -316,6 +328,19 @@ const CardTable = ({
     })),
   ];
 
+  const coupon = [
+    {
+      code: "A8BJL4SPYG",
+      amount: 100,
+      type: "nominal",
+    },
+    {
+      code: "A1BJL4SPYG",
+      amount: 50,
+      type: "percentage",
+    },
+  ];
+
   return (
     <tbody>
       <tr>
@@ -401,30 +426,63 @@ const CardTable = ({
           </div>
         </td>
         <td>
-          <div className="join items-center w-[130px] input input-bordered">
+          <div className="flex flex-col">
             <input
-              className="join-item w-full"
+              className="input input-bordered w-full"
               placeholder="discount"
-              type="number"
+              type="text"
               name="discount"
-              value={item.discount ?? ""}
+              value={item.discount.code ?? ""}
               onChange={(e) => {
-                setItems(
-                  data.map((item, i) => {
-                    if (i === index) {
-                      return {
-                        ...item,
-                        discount: e.target.value,
-                      };
-                    }
+                // cek coupon
+                const cc = coupon.find((item) => item.code === e.target.value);
 
-                    return item;
-                  })
-                );
+                if (cc) {
+                  // cek type coupon
+                  setItems(
+                    data.map((item, i) => {
+                      if (i === index) {
+                        return {
+                          ...item,
+                          discount: {
+                            ...item.discount,
+                            code: e.target.value,
+                            amount: cc.amount,
+                            type: cc.type,
+                          },
+                        };
+                      }
+
+                      return item;
+                    })
+                  );
+                } else {
+                  setItems(
+                    data.map((item, i) => {
+                      if (i === index) {
+                        return {
+                          ...item,
+                          discount: {
+                            ...item.discount,
+                            code: e.target.value,
+                            amount: 0,
+                            type: "",
+                          },
+                        };
+                      }
+
+                      return item;
+                    })
+                  );
+                }
               }}
               id=""
             />
-            <p className="px-2 font-bold">$</p>
+            {item.discount.type != "" && (
+              <span className="font-medium text-green-500">
+                Congratulations! Your coupon was applied.
+              </span>
+            )}
           </div>
         </td>
         <td>

@@ -75,8 +75,6 @@ const PreviewContract = () => {
       render: renderIcon(cloneImg),
       cornerSize: 24,
     });
-
-
   };
 
   const content = useRef(null);
@@ -91,12 +89,16 @@ const PreviewContract = () => {
             <div className="tooltip tooltip-left" data-tip="Download">
               <button
                 onClick={() => {
-                  html2canvas(content.current).then((canvas) => {
-                    const imgURL = canvas.toDataURL();
+                  html2canvas(content.current, {
+                    useCORS: true,
+                    scale: 2,
+                  }).then((canvas) => {
+                    // download set width an height and set image type
                     const link = document.createElement("a");
-                    link.href = imgURL;
-                    link.download = "canvas-image.png";
+                    link.download = "contract.png";
+                    link.href = canvas.toDataURL("image/png");
                     link.click();
+
                   });
                 }}
                 className="btn btn-square btn-success text-white btn-sm"
@@ -141,7 +143,7 @@ const PreviewContract = () => {
       </div>
       <div
         ref={content}
-        className=" w-full mx-auto p-8 bg-base-100 shadow-lg flex flex-col relative duration-300 ease-in-out"
+        className=" w-[800px] mx-auto p-8 bg-base-100 shadow-lg flex flex-col relative"
       >
         <FabricJSCanvas
           className="sample-canvas absolute top-0 left-0 w-full h-full"
