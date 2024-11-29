@@ -45,14 +45,16 @@ const SectionDashboard = () => {
 const Card = ({ icon, title, value, bgColor, textColor }) => {
   return (
     <div className="w-full bg-base-100 p-6 drop-shadow flex rounded-md flex-col h-fit">
-      <div
-        className={`${bgColor} p-2 text-white w-fit h-fit overflow-hidden aspect-square flex flex-col justify-center items-center rounded-lg`}
-      >
-        {icon}
+      <div className="flex flex-row gap-3 items-center">
+        <div
+          className={`${bgColor} p-2 text-white w-fit h-fit overflow-hidden aspect-square flex flex-col justify-center items-center rounded-lg`}
+        >
+          {icon}
+        </div>
+        <p className={`${textColor} font-medium`}>{title}</p>
       </div>
-      <span className="mt-2">Total</span>
-      <p className={`${textColor} font-medium`}>{title}</p>
-      <span className={`font-semibold text-2xl ${textColor}`}>{value}</span>
+      {/* <span className="mt-2">Total</span> */}
+      <span className={`font-semibold text-2xl mt-4 ${textColor}`}>{value}</span>
     </div>
   );
 };

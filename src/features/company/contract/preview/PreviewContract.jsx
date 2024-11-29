@@ -86,7 +86,7 @@ const PreviewContract = () => {
         breadcrumb={"Preview Contract"}
         actions={
           <div className="flex gap-2 items-center">
-            <div className="tooltip tooltip-left" data-tip="Download">
+            {/* <div className="tooltip tooltip-left" data-tip="Download">
               <button
                 onClick={() => {
                   html2canvas(content.current, {
@@ -105,7 +105,7 @@ const PreviewContract = () => {
               >
                 <GoDownload />
               </button>
-            </div>
+            </div> */}
           </div>
         }
       />
@@ -128,18 +128,36 @@ const PreviewContract = () => {
         name=""
         id=""
       />
-      <div
-        className="fixed bottom-5 right-5 tooltip tooltip-left z-[200]"
-        data-tip="Insert Image"
-      >
-        <button
-          onClick={() => {
-            inputFile.current.click();
-          }}
-          className="btn btn-circle btn-primary "
-        >
-          <MdOutlineFileUpload />
-        </button>
+      <div className="fixed bottom-5 right-5 gap-3 flex items-center z-[200]">
+        <div className="tooltip tooltip-left" data-tip="Insert Image">
+          <button
+            onClick={() => {
+              inputFile.current.click();
+            }}
+            className="btn btn-circle btn-primary "
+          >
+            <MdOutlineFileUpload />
+          </button>
+        </div>
+        <div className="tooltip tooltip-left" data-tip="Download">
+          <button
+            onClick={() => {
+              html2canvas(content.current, {
+                useCORS: true,
+                scale: 2,
+              }).then((canvas) => {
+                // download set width an height and set image type
+                const link = document.createElement("a");
+                link.download = "contract.png";
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+              });
+            }}
+            className="btn btn-circle btn-success text-white"
+          >
+            <GoDownload />
+          </button>
+        </div>
       </div>
       <div
         ref={content}
