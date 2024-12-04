@@ -22,7 +22,7 @@ const Coupon = () => {
     },
     {
       name: "DiscountCoupon",
-      code: "A8BJL4SPYG",
+      code: "A1BJL4SPYG",
       type: "Percentage",
       discount: "50%",
       limit: 10,
